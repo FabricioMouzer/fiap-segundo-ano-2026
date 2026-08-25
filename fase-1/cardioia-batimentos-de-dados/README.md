@@ -158,6 +158,6 @@ cardioia-batimentos-de-dados/
 
 ## Status da auditoria
 
-🟡 **Validado tecnicamente, com acesso público pendente.** Em 25/08/2026 foram confirmados: CSV com 150 linhas e 17 variáveis, sem nulos ou duplicidades; XLSX equivalente com três abas; dois arquivos `.txt`; ZIP íntegro com 100 PNGs e manifesto consistente. Os arquivos do Google Drive ainda precisam receber a permissão “qualquer pessoa com o link” e ser testados em janela anônima antes da entrega.
+🟢 **Pronto para entrega.** Em 25/08/2026 foram confirmados: CSV com 150 linhas e 17 variáveis, sem nulos ou duplicidades; XLSX equivalente com três abas; dois arquivos `.txt`; ZIP íntegro com 100 PNGs e manifesto consistente. Os cinco arquivos do Google Drive foram abertos com sucesso em janela anônima, sem autenticação.
 
 Consulte [`docs/VALIDACAO_ENTREGA.md`](docs/VALIDACAO_ENTREGA.md).
