@@ -17,7 +17,7 @@
 | Manifesto visual | 100 entradas únicas e nenhuma imagem ausente | Aprovado |
 | README | Objetivo, fontes, justificativas, governança, equipe e links | Aprovado |
 | Estrutura | Pastas `assets`, `data`, `docs`, `notebooks` e `scripts` | Aprovado |
-| Acesso público | Drive reporta os cinco arquivos como não compartilhados | Bloqueador |
+| Acesso público | Cinco arquivos abertos em janela anônima, sem login | Aprovado |
 
 ## Perfil do dataset
 
@@ -37,17 +37,9 @@
 
 Os dois arquivos atuais são textos contextuais derivados de obras em domínio público do Project Gutenberg. Eles atendem à quantidade, ao formato, à temática, às fontes e à explicação de uso em NLP. Como o enunciado usa a expressão “faça o download de textos”, recomenda-se confirmar com o professor se são aceitos textos contextuais ou se devem ser incluídas as obras integrais em `.txt`.
 
-## Bloqueador antes da entrega
+## Verificação de acesso
 
-Os arquivos do Google Drive precisam ser configurados como **Qualquer pessoa com o link — Leitor** e testados em uma janela anônima:
-
-1. CSV;
-2. XLSX;
-3. Texto 1;
-4. Texto 2;
-5. ZIP com 100 ECGs.
-
-Não enviar o link à FIAP enquanto esse teste não for concluído.
+Em 25/08/2026, o grupo confirmou a abertura dos cinco arquivos em janela anônima, sem login: CSV, XLSX, Texto 1, Texto 2 e ZIP com 100 ECGs. O requisito de acesso público está concluído.
 
 ## Equipe
 
