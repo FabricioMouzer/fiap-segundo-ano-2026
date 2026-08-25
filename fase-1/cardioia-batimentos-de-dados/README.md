@@ -14,6 +14,11 @@ Preparar três modalidades de dados cardiovasculares:
 
 O trabalho prioriza rastreabilidade, privacidade, documentação, análise de vieses e reutilização nas próximas fases do PBL.
 
+## Prazo da atividade
+
+- Período informado na plataforma FIAP: **03/08/2026 a 02/09/2026**.
+- A captura fornecida não exibe o horário de encerramento; o grupo deve confirmar o horário diretamente na plataforma antes do envio.
+
 ## Entregáveis e links públicos
 
 | Parte | Conteúdo | Quantidade | Formato | Link público |
@@ -153,4 +158,6 @@ cardioia-batimentos-de-dados/
 
 ## Status da auditoria
 
-🟡 **Em desenvolvimento.** Os dados e links foram preparados, mas a permissão “qualquer pessoa com o link” e o acesso em janela anônima ainda precisam ser confirmados antes da entrega.
+🟡 **Validado tecnicamente, com acesso público pendente.** Em 25/08/2026 foram confirmados: CSV com 150 linhas e 17 variáveis, sem nulos ou duplicidades; XLSX equivalente com três abas; dois arquivos `.txt`; ZIP íntegro com 100 PNGs e manifesto consistente. Os arquivos do Google Drive ainda precisam receber a permissão “qualquer pessoa com o link” e ser testados em janela anônima antes da entrega.
+
+Consulte [`docs/VALIDACAO_ENTREGA.md`](docs/VALIDACAO_ENTREGA.md).
