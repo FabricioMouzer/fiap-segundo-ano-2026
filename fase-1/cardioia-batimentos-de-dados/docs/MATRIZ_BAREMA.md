@@ -16,6 +16,6 @@
 - [ ] Contagem de 150 linhas confirmada, excluindo o cabeçalho.
 - [ ] Contagem de 100 PNGs confirmada pelo manifesto.
 - [ ] README revisado e sem marcadores “A INSERIR”.
-- [ ] Integrantes e RMs confirmados.
+- [x] Integrantes e RMs confirmados.
 - [ ] Link do repositório enviado na plataforma FIAP.
 - [ ] Upload final conferido antes do encerramento do prazo.
