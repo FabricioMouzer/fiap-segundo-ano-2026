@@ -1,0 +1,26 @@
+CARDIOIA — TEXTO CONTEXTUAL 02
+
+Título de referência: The Lettsomian Lectures on Diseases and Disorders of the Heart and Arteries in Middle and Advanced Life
+Autor: J. Mitchell Bruce
+Fonte original: Project Gutenberg, eBook 43780
+URL: https://www.gutenberg.org/ebooks/43780
+Status informado pela fonte: domínio público nos Estados Unidos
+Idioma da obra: inglês
+
+CONTEXTO
+
+A obra reúne aulas históricas sobre doenças do coração e das artérias em pessoas de meia-idade e idade avançada. Para o CardioIA, a fonte ajuda a construir um corpus voltado a fatores associados à idade, sintomas, observações clínicas e descrições de doenças cardiovasculares.
+
+Em NLP, o texto pode apoiar extração de referências a idade, circulação, artérias, coração, sintomas e intervenções. Pode também ser dividido em tópicos e comparado ao primeiro texto para avaliar semelhanças de vocabulário, diferenças de foco e mudanças na forma de comunicar risco e cuidado cardiovascular.
+
+PERGUNTAS DE NLP
+
+1. Quais entidades clínicas e anatômicas são mais frequentes?
+2. Como idade e risco aparecem associados no discurso?
+3. Quais tópicos podem ser formados por agrupamento de termos?
+4. Que expressões exigem lematização ou dicionário histórico?
+5. Como evitar que um modelo trate afirmações históricas como evidência atual?
+
+LIMITAÇÕES
+
+O texto reflete conhecimentos e práticas de sua época. É adequado para estudo linguístico e histórico, mas não substitui diretrizes médicas contemporâneas. Resultados de NLP precisam de revisão humana e contexto temporal explícito.

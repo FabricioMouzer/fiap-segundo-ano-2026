@@ -1,0 +1,26 @@
+CARDIOIA — TEXTO CONTEXTUAL 01
+
+Título de referência: Disturbances of the Heart
+Autor: Oliver T. Osborne
+Fonte original: Project Gutenberg, eBook 3731
+URL: https://www.gutenberg.org/ebooks/3731
+Status informado pela fonte: domínio público nos Estados Unidos
+Idioma da obra: inglês
+
+CONTEXTO
+
+Esta obra histórica discute distúrbios do coração, pressão arterial e abordagens terapêuticas conhecidas no início do século XX. Ela é relevante para o CardioIA como corpus histórico e terminológico, não como orientação médica atual.
+
+O texto permite observar como sintomas, sinais, pressão arterial, ritmo, esforço e tratamento eram descritos em outra época. Para um experimento de Processamento de Linguagem Natural, essas descrições podem ser usadas para identificar entidades relacionadas ao coração, sintomas, medicamentos, condutas e medidas fisiológicas. Também é possível comparar vocabulário histórico com linguagem contemporânea e medir mudanças terminológicas.
+
+PERGUNTAS DE NLP
+
+1. Quais termos aparecem próximos de “heart”, “pulse” e “blood pressure”?
+2. Que sintomas podem ser extraídos por regras ou reconhecimento de entidades?
+3. Como classificar trechos entre sintomas, diagnóstico, tratamento e fisiologia?
+4. Que palavras históricas ou ambíguas exigem normalização?
+5. Um modelo de sumarização preserva limitações e contexto temporal?
+
+LIMITAÇÕES
+
+O conteúdo é histórico e pode conter conceitos superados. Não deve ser usado para diagnóstico ou tratamento. Uma análise responsável precisa registrar a data, o contexto e a diferença entre história da medicina e evidência clínica atual.
