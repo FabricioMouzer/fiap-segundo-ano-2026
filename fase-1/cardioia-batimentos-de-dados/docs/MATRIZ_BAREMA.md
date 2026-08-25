@@ -13,9 +13,9 @@
 - [ ] Link público do CSV/XLSX aberto em janela anônima.
 - [ ] Link público dos dois textos aberto em janela anônima.
 - [ ] Link público do ZIP com 100 imagens aberto em janela anônima.
-- [ ] Contagem de 150 linhas confirmada, excluindo o cabeçalho.
-- [ ] Contagem de 100 PNGs confirmada pelo manifesto.
-- [ ] README revisado e sem marcadores “A INSERIR”.
+- [x] Contagem de 150 linhas confirmada, excluindo o cabeçalho.
+- [x] Contagem de 100 PNGs confirmada pelo manifesto.
+- [x] README revisado e sem marcadores “A INSERIR”.
 - [x] Integrantes e RMs confirmados.
 - [ ] Link do repositório enviado na plataforma FIAP.
 - [ ] Upload final conferido antes do encerramento do prazo.
