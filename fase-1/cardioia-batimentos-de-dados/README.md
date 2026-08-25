@@ -140,10 +140,16 @@ cardioia-batimentos-de-dados/
 - Project Gutenberg — *The Lettsomian Lectures...*: https://www.gutenberg.org/ebooks/43780
 - PhysioNet — MIT-BIH Supraventricular Arrhythmia Database: https://physionet.org/content/svdb/1.0.0/
 
-## Autoria
+## Equipe
 
-- Fabrício Mouzer Brito — RM 566777
-- Curso: Tecnólogo em Inteligência Artificial — FIAP
+| Integrante | RM |
+|---|---|
+| Fabrício Mouzer Brito | RM566777 |
+| Enzo Nunes Castanheira Gloria da Silva | RM567599 |
+| Larissa Nunes Moreira Reis | RM568280 |
+| Gabriel Rapozo Guimarães Soares | RM568480 |
+
+**Curso:** Tecnólogo em Inteligência Artificial — FIAP
 
 ## Status da auditoria
 
