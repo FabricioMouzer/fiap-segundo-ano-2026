@@ -67,10 +67,12 @@ Essas variáveis são clinicamente plausíveis como temas de estudo, mas os valo
 
 ## Parte 2 — Dados textuais
 
-Foram preparados dois arquivos em `assets/textos/`, contextualizados a partir de obras de domínio público do Project Gutenberg:
+Foram preparados quatro arquivos em `assets/textos/`, contextualizados a partir de obras de domínio público do Project Gutenberg:
 
 1. *Disturbances of the Heart*, de Oliver T. Osborne;
 2. *The Lettsomian Lectures on Diseases and Disorders of the Heart and Arteries in Middle and Advanced Life*, de J. Mitchell Bruce.
+3. *RIO DE JANEIRO (Município). Secretaria Municipal de Saúde. Superintendência de Atenção Primária. *Hipertensão: manejo clínico em adultos: versão profissional*. 1. ed. Rio de Janeiro: SMS, 2016;
+4. MION JR., D. et al. *Diagnóstico da hipertensão arterial*. Medicina, Ribeirão Preto, v. 29, p. 193-198, abr./set. 1996.
 
 Os arquivos do repositório são textos contextuais produzidos para o projeto e registram a fonte original. As obras históricas não devem ser interpretadas como orientação médica atual.
 
@@ -82,8 +84,13 @@ Os arquivos do repositório são textos contextuais produzidos para o projeto e 
 - **comparação temporal:** comparar linguagem médica histórica com terminologia contemporânea;
 - **sumarização:** produzir resumos rastreáveis e avaliar perda de informação;
 - **limpeza e normalização:** estudar tokenização, stopwords, lematização e variação terminológica.
+- **suporte à decisão clínica (RAG):** Os textos servem como base de conhecimento (contexto) para sistemas de perguntas e respostas. Ao cruzar o perfil de um paciente do CSV com o conteúdo indexado do Guia da Prefeitura, a IA pode sugerir ao profissional de saúde a conduta exata (modificação de estilo de vida ou intervenção medicamentosa) recomendada pelos protocolos oficiais para aquele quadro específico;
+- **geração de linguagem natural (NLG):** Aprendendo a estrutura de anamnese e o jargão técnico presentes no artigo científico, algoritmos generativos podem ler uma linha do CSV contendo os dados de um paciente e redigir automaticamente um laudo médico ou evolução clínica sintética, enriquecendo o banco de dados;
+- **transformação de texto em regras de decisão:** Os guias clínicos contêm lógicas condicionais claras (ex: se PAS estiver entre 140-159 mmHg, classificar como Estágio 1). Técnicas de processamento de linguagem natural podem extrair esses limiares do texto para criar classificadores baseados em regras, permitindo rotular automaticamente os pacientes do dataset tabular;
 
-Essas tarefas são relevantes porque grande parte da informação clínica está em linguagem natural. Porém, resultados automáticos exigem validação humana, contexto e governança.
+
+A exploração de textos médicos via NLP constrói a ponte entre o dado numérico bruto do paciente e o conhecimento científico estabelecido. Isso é essencial para desenvolver ecossistemas de saúde inteligentes que não apenas calculam estatísticas, mas que embasam e explicam suas previsões utilizando protocolos clínicos reais, aumentando a segurança e a confiabilidade da ferramenta de IA. Essas tarefas são relevantes porque grande parte da informação clínica está em linguagem natural. Porém, resultados automáticos exigem validação humana, contexto e governança.
+
 
 ## Parte 3 — Dados visuais
 
