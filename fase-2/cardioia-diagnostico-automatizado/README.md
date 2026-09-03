@@ -17,6 +17,7 @@ Para entender a evolução do CardioIA, o que foi realizado na Fase 1 e todo o p
 - [Dicionário de dados](data/DICIONARIO_DADOS.md)
 - [Resultados e evidências de validação](docs/RESULTADOS_VALIDACAO.md)
 - [Análise das previsões incorretas](docs/ANALISE_ERROS_MODELO.md)
+- [Matriz de atendimento ao barema](docs/MATRIZ_BAREMA.md)
 
 ## Objetivos
 
