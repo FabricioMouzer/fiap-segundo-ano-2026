@@ -51,9 +51,9 @@ Apresenta carregamento, validação, TF-IDF, comparação de modelos, métricas,
 
 Funciona como interface de entrega, documentação e navegação da equipe.
 
-### 4. Portal React — opcional
+### 4. Portal React — implementado
 
-Se aprovado depois da trilha obrigatória, exibirá login simulado, pacientes fictícios, agendamentos e dashboard. Não será usado como prontuário nem como sistema médico real.
+Disponível em [CardioIA — Demonstração Acadêmica](https://cardioia-demo-fiap.fabriciomouzer2025.chatgpt.site). Recebe relatos sintéticos, apresenta achados explicáveis e reproduz no navegador a inferência da Regressão Logística validada. Não é prontuário nem sistema médico real.
 
 ## Arquitetura
 

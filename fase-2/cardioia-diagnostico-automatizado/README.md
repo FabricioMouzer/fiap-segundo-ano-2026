@@ -102,6 +102,12 @@ jupyter notebook notebooks/classificador_risco_tfidf.ipynb
 
 Link: `A INSERIR APÓS PUBLICAÇÃO COMO NÃO LISTADO`
 
+## Demonstração visual interativa
+
+[Abrir o portal CardioIA](https://cardioia-demo-fiap.fabriciomouzer2025.chatgpt.site)
+
+O portal permite testar relatos sintéticos, consultar os sintomas identificados pelo mapa de conhecimento e visualizar a classificação produzida pelos parâmetros exportados da Regressão Logística validada no notebook. Consulte a [documentação da demonstração](docs/DEMONSTRACAO_VISUAL.md).
+
 ## Continuidade do projeto
 
 Esta fase dá continuidade ao CardioIA iniciado na Fase 1, preservando o uso de dados sintéticos, a rastreabilidade dos artefatos e o compromisso com privacidade e IA responsável.
