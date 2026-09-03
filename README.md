@@ -5,7 +5,7 @@ Repositório acadêmico central de Fabrício Mouzer Brito para organização dos
 ## Organização
 
 - `fase-1/`: Batimentos de Dados e demais atividades da primeira fase;
-- `fase-2/`: reservado para a segunda fase;
+- `fase-2/`: Diagnóstico Automatizado — IA no Estetoscópio Digital;
 - `fase-3/`: reservado para a terceira fase;
 - `challenge/`: projetos Challenge com repositórios próprios quando necessário;
 - `global-solution/`: Global Solution e documentação relacionada.
@@ -17,6 +17,12 @@ Repositório acadêmico central de Fabrício Mouzer Brito para organização dos
 Preparação governada de dados numéricos, textuais e visuais para um ecossistema acadêmico de cardiologia inteligente.
 
 Acesse: [`fase-1/cardioia-batimentos-de-dados/`](fase-1/cardioia-batimentos-de-dados/)
+
+### CardioIA — Fase 2: Diagnóstico Automatizado
+
+Extração de sintomas por mapa de conhecimento e classificação de risco textual com TF-IDF e Machine Learning.
+
+Acesse: [`fase-2/cardioia-diagnostico-automatizado/`](fase-2/cardioia-diagnostico-automatizado/)
 
 ## Padrão acadêmico
 
