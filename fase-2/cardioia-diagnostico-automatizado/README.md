@@ -8,6 +8,12 @@ Módulo acadêmico de apoio à triagem cardiológica que combina extração de s
 
 🟡 Planejamento e preparação técnica.
 
+## Guia de orientação da equipe
+
+Para entender a evolução do CardioIA, o que foi realizado na Fase 1 e todo o plano da Fase 2, consulte:
+
+- [Visão geral das Fases 1 e 2](docs/VISAO_GERAL_FASES_1_E_2.md)
+
 ## Objetivos
 
 1. Ler relatos sintéticos de pacientes e identificar sintomas por expressões conhecidas.
