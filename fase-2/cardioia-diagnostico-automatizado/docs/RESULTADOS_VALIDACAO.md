@@ -18,7 +18,10 @@ A Árvore de Decisão apresentou desempenho baixo nesta base textual pequena. O 
 ## Evidências geradas
 
 - `data/processed/resultados_extrator.json`: achados dos 10 relatos;
+- `data/processed/resultados_extrator.csv`: achados em formato tabular;
 - `data/processed/metricas_modelos.json`: métricas e matrizes de confusão;
+- `data/processed/erros_regressao_logistica.csv`: quatro previsões divergentes;
+- `docs/ANALISE_ERROS_MODELO.md`: interpretação rastreável dos erros;
 - `notebooks/classificador_risco_tfidf.ipynb`: método, treinamento, avaliação e análise crítica;
 - `tests/`: verificações automáticas dos dados e do extrator.
 

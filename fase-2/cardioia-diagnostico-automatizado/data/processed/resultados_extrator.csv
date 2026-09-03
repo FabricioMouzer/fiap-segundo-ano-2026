@@ -1,0 +1,20 @@
+relato_id,achado_id,relato,expressao,sintoma,possivel_associacao,nivel_alerta
+1,1,Há dois dias sinto uma pressão forte no peito quando subo escadas e precisei interromper minhas atividades.,pressão forte no peito,dor torácica,angina / síndrome coronariana,alto
+2,1,"Desde ontem meu coração fica acelerado e irregular mesmo quando estou sentado, dificultando meu sono.",coração fica acelerado,palpitação,taquicardia / arritmia,avaliar
+3,1,"Há uma semana sinto cansaço constante e falta de ar ao caminhar pequenas distâncias, mesmo depois de descansar.",falta de ar,dispneia,insuficiência cardíaca / causa respiratória,alto
+3,2,"Há uma semana sinto cansaço constante e falta de ar ao caminhar pequenas distâncias, mesmo depois de descansar.",cansaço constante,fadiga,insuficiência cardíaca / outras causas,avaliar
+4,1,"Nesta manhã tive dor intensa no peito acompanhada de suor frio e náusea, e não consegui continuar trabalhando.",dor intensa no peito,dor torácica,síndrome coronariana / outras causas,alto
+4,2,"Nesta manhã tive dor intensa no peito acompanhada de suor frio e náusea, e não consegui continuar trabalhando.",suor frio,sudorese fria,síndrome coronariana / outras causas,alto
+4,3,"Nesta manhã tive dor intensa no peito acompanhada de suor frio e náusea, e não consegui continuar trabalhando.",náusea,náusea,síndrome coronariana / causa digestiva,avaliar
+5,1,Há três dias percebo inchaço nos tornozelos no fim do dia e fico cansado durante tarefas domésticas simples.,inchaço nos tornozelos,edema periférico,insuficiência cardíaca / outras causas,avaliar
+6,1,Desde a noite passada sinto tontura quando me levanto e quase desmaiei ao caminhar até o banheiro.,tontura,tontura,arritmia / hipotensão / outras causas,avaliar
+6,2,Desde a noite passada sinto tontura quando me levanto e quase desmaiei ao caminhar até o banheiro.,quase desmaiei,pré-síncope,arritmia / hipotensão,alto
+7,1,"Há quatro dias sinto uma dor leve nas costas após carregar peso, mas continuo realizando minhas atividades normalmente.",dor leve nas costas,dor dorsal,causa musculoesquelética / outras causas,baixo
+8,1,Há duas semanas tenho tosse seca ao deitar e preciso usar mais travesseiros porque sinto dificuldade para respirar.,dificuldade para respirar,dispneia,insuficiência cardíaca / causa respiratória,alto
+8,2,Há duas semanas tenho tosse seca ao deitar e preciso usar mais travesseiros porque sinto dificuldade para respirar.,tosse seca ao deitar,ortopneia / tosse noturna,insuficiência cardíaca / causa respiratória,avaliar
+8,3,Há duas semanas tenho tosse seca ao deitar e preciso usar mais travesseiros porque sinto dificuldade para respirar.,usar mais travesseiros,ortopneia,insuficiência cardíaca / causa respiratória,avaliar
+9,1,Desde ontem sinto uma pontada breve no peito que piora quando respiro fundo e movimenta o tronco.,pontada breve no peito,dor torácica atípica,causa musculoesquelética / pleurítica,avaliar
+9,2,Desde ontem sinto uma pontada breve no peito que piora quando respiro fundo e movimenta o tronco.,piora quando respiro fundo,dor pleurítica,causa pleural / musculoesquelética,avaliar
+10,1,"Há alguns minutos comecei a sentir fraqueza súbita em um lado do corpo e dificuldade para falar, interrompendo completamente minha rotina.",fraqueza súbita,déficit neurológico súbito,acidente vascular cerebral,alto
+10,2,"Há alguns minutos comecei a sentir fraqueza súbita em um lado do corpo e dificuldade para falar, interrompendo completamente minha rotina.",um lado do corpo,déficit neurológico focal,acidente vascular cerebral,alto
+10,3,"Há alguns minutos comecei a sentir fraqueza súbita em um lado do corpo e dificuldade para falar, interrompendo completamente minha rotina.",dificuldade para falar,alteração da fala,acidente vascular cerebral,alto

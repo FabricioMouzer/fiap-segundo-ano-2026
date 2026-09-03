@@ -118,6 +118,24 @@ for nome, item in resultados.items():
     print(f"\\n{nome} — acurácia: {item['acuracia']:.3f}")
     print(pd.DataFrame(item["relatorio"]).T.round(3))
 """),
+    markdown("### Análise individual dos erros da Regressão Logística"),
+    codigo("""
+pipeline_regressao = pipelines["Regressão Logística"]
+avaliacao_erros = teste[["frase", "situacao", "grupo_id"]].copy()
+avaliacao_erros["previsao"] = pipeline_regressao.predict(X_teste)
+indice_alto = list(pipeline_regressao.classes_).index("alto risco")
+avaliacao_erros["probabilidade_alto_risco"] = pipeline_regressao.predict_proba(X_teste)[:, indice_alto]
+avaliacao_erros["tipo_erro"] = "correto"
+avaliacao_erros.loc[
+    (avaliacao_erros["situacao"] == "alto risco") & (avaliacao_erros["previsao"] == "baixo risco"),
+    "tipo_erro",
+] = "falso negativo"
+avaliacao_erros.loc[
+    (avaliacao_erros["situacao"] == "baixo risco") & (avaliacao_erros["previsao"] == "alto risco"),
+    "tipo_erro",
+] = "falso positivo"
+avaliacao_erros[avaliacao_erros["tipo_erro"] != "correto"].round({"probabilidade_alto_risco": 4})
+"""),
     codigo("""
 fig, eixos = plt.subplots(1, 2, figsize=(11, 4))
 for eixo, (nome, item) in zip(eixos, resultados.items()):

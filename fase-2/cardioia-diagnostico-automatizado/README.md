@@ -16,6 +16,7 @@ Para entender a evolução do CardioIA, o que foi realizado na Fase 1 e todo o p
 - [Recursos, plugins, interfaces e arquitetura](docs/RECURSOS_E_ARQUITETURA.md)
 - [Dicionário de dados](data/DICIONARIO_DADOS.md)
 - [Resultados e evidências de validação](docs/RESULTADOS_VALIDACAO.md)
+- [Análise das previsões incorretas](docs/ANALISE_ERROS_MODELO.md)
 
 ## Objetivos
 
