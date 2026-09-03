@@ -350,7 +350,7 @@ A divisão é operacional. Todos devem compreender e revisar o trabalho completo
 # Links
 
 - [Repositório principal](https://github.com/FabricioMouzer/fiap-segundo-ano-2026)
-- [Pasta da Fase 1](../..//fase-1/cardioia-batimentos-de-dados/)
+- [Pasta da Fase 1](../../../fase-1/cardioia-batimentos-de-dados/)
 - [Pasta da Fase 2](../)
 
 # Resumo final
