@@ -1,0 +1,81 @@
+frase,situacao,grupo_id
+"Desde ontem, sinto rigidez nas costas ao acordar, que melhora durante o dia. Percebi o sintoma durante minhas atividades.",baixo risco,baixo_14
+"Hoje, senti um pequeno incômodo nas costas durante o trabalho, sem outros sintomas. Isso alterou minha rotina.",baixo risco,baixo_17
+"Há dois dias, sinto leve desconforto muscular nas costas desde o treino de ontem. Estou observando a evolução do sintoma.",baixo risco,baixo_04
+"Nesta manhã, sinto forte peso no peito e dificuldade para respirar desde agora há pouco. O episódio me deixou preocupado.",alto risco,alto_19
+"Senti um pequeno incômodo nas costas durante o trabalho, sem outros sintomas.",baixo risco,baixo_17
+Sinto dor muscular leve quando levanto o braço direito.,baixo risco,baixo_11
+Tenho uma pontada breve no peito apenas quando movimento o tronco.,baixo risco,baixo_02
+A dor no peito começou durante o esforço e permanece mesmo sentado.,alto risco,alto_15
+Comecei a sentir fraqueza súbita em um lado do corpo e dificuldade para falar.,alto risco,alto_07
+"Desde ontem, meu peito está apertado e a dor se espalha para o ombro e braço. Percebi o sintoma durante minhas atividades.",alto risco,alto_14
+"Desde ontem, tenho cansaço leve depois de dormir pouco, sem falta de ar ou dor no peito. Percebi o sintoma durante minhas atividades.",baixo risco,baixo_06
+"Hoje, senti leve dor nas costas depois de carregar caixas e ela melhora com repouso. Isso alterou minha rotina.",baixo risco,baixo_01
+"Nesta manhã, o ombro ficou dolorido após a academia, mas consigo fazer minhas atividades. O episódio me deixou preocupado.",baixo risco,baixo_03
+Senti leve dor nas costas depois de carregar caixas e ela melhora com repouso.,baixo risco,baixo_01
+Sinto leve desconforto muscular nas costas desde o treino de ontem.,baixo risco,baixo_04
+"Desde ontem, estou confuso, com suor frio e uma dor forte no tórax. Percebi o sintoma durante minhas atividades.",alto risco,alto_10
+"Desde ontem, meu coração está irregular e tive uma perda breve de consciência. Percebi o sintoma durante minhas atividades.",alto risco,alto_18
+"Desde ontem, tive um desmaio repentino depois de sentir o batimento irregular. Percebi o sintoma durante minhas atividades.",alto risco,alto_06
+"Há dois dias, tive uma pontada curta no peito ao respirar fundo, mas ela já passou. Estou observando a evolução do sintoma.",baixo risco,baixo_12
+"Nesta manhã, sinto dor muscular leve quando levanto o braço direito. O episódio me deixou preocupado.",baixo risco,baixo_11
+Acordei sem conseguir respirar e continuo com forte pressão no peito.,alto risco,alto_09
+"Desde ontem, tenho uma pontada breve no peito apenas quando movimento o tronco. Percebi o sintoma durante minhas atividades.",baixo risco,baixo_02
+"Hoje, acordei sem conseguir respirar e continuo com forte pressão no peito. Isso alterou minha rotina.",alto risco,alto_09
+"Hoje, sinto forte dor no peito com falta de ar desde esta manhã. Isso alterou minha rotina.",alto risco,alto_01
+"Há dois dias, a dor no peito está irradiando para o braço esquerdo e para o maxilar. Estou observando a evolução do sintoma.",alto risco,alto_04
+"Há dois dias, sinto uma pontada superficial e rápida quando espirro ou me movimento. Estou observando a evolução do sintoma.",baixo risco,baixo_20
+"Nesta manhã, a dor no peito começou durante o esforço e permanece mesmo sentado. O episódio me deixou preocupado.",alto risco,alto_15
+"Nesta manhã, comecei a sentir fraqueza súbita em um lado do corpo e dificuldade para falar. O episódio me deixou preocupado.",alto risco,alto_07
+Senti tensão no ombro após trabalhar muitas horas sentado.,baixo risco,baixo_07
+Sinto forte dor no peito com falta de ar desde esta manhã.,alto risco,alto_01
+"Tive uma pontada curta no peito ao respirar fundo, mas ela já passou.",baixo risco,baixo_12
+A dor no peito está irradiando para o braço esquerdo e para o maxilar.,alto risco,alto_04
+"Hoje, uma dor súbita no peito veio acompanhada de náusea e fraqueza intensa. Isso alterou minha rotina.",alto risco,alto_17
+Sinto uma pontada superficial e rápida quando espirro ou me movimento.,baixo risco,baixo_20
+Uma dor súbita no peito veio acompanhada de náusea e fraqueza intensa.,alto risco,alto_17
+A dor aparece somente quando faço um movimento específico com o tronco.,baixo risco,baixo_18
+"Nesta manhã, senti tensão no ombro após trabalhar muitas horas sentado. O episódio me deixou preocupado.",baixo risco,baixo_07
+"Hoje, tenho um incômodo leve no peito ao apertar o local com a mão. Isso alterou minha rotina.",baixo risco,baixo_09
+"Há dois dias, a dor nas costas começou depois de uma postura ruim e melhora ao alongar. Estou observando a evolução do sintoma.",baixo risco,baixo_08
+"Há dois dias, a falta de ar piorou rapidamente e agora não consigo completar uma frase. Estou observando a evolução do sintoma.",alto risco,alto_12
+"Há dois dias, minha fala ficou enrolada e perdi força em um dos braços de forma súbita. Estou observando a evolução do sintoma.",alto risco,alto_20
+Senti perda de consciência após uma sequência de palpitações.,alto risco,alto_11
+Tenho um incômodo leve no peito ao apertar o local com a mão.,baixo risco,baixo_09
+A dor nas costas começou depois de uma postura ruim e melhora ao alongar.,baixo risco,baixo_08
+A falta de ar piorou rapidamente e agora não consigo completar uma frase.,alto risco,alto_12
+"Hoje, meu coração está muito acelerado e quase desmaiei ao levantar. Isso alterou minha rotina.",alto risco,alto_05
+"Há dois dias, tenho dor leve no ombro desde que carreguei uma mochila pesada. Estou observando a evolução do sintoma.",baixo risco,baixo_16
+Meu coração está muito acelerado e quase desmaiei ao levantar.,alto risco,alto_05
+Minha fala ficou enrolada e perdi força em um dos braços de forma súbita.,alto risco,alto_20
+O desconforto no tórax apareceu após exercício de braço e melhora parado.,baixo risco,baixo_10
+Uma pressão intensa no peito começou durante a caminhada e não melhorou com repouso.,alto risco,alto_02
+"Desde ontem, a dor aparece somente quando faço um movimento específico com o tronco. Percebi o sintoma durante minhas atividades.",baixo risco,baixo_18
+"Estou com aperto no tórax, suor frio e náusea há vinte minutos.",alto risco,alto_03
+Estou com desconforto muscular após atividade física e ele vem melhorando.,baixo risco,baixo_19
+Estou com leve cansaço após uma noite mal dormida e mantenho minha rotina.,baixo risco,baixo_13
+"Hoje, estou com leve cansaço após uma noite mal dormida e mantenho minha rotina. Isso alterou minha rotina.",baixo risco,baixo_13
+"Nesta manhã, senti perda de consciência após uma sequência de palpitações. O episódio me deixou preocupado.",alto risco,alto_11
+"O peito ficou sensível depois do treino, principalmente ao tocar a região.",baixo risco,baixo_15
+"Sinto rigidez nas costas ao acordar, que melhora durante o dia.",baixo risco,baixo_14
+Tenho dor leve no ombro desde que carreguei uma mochila pesada.,baixo risco,baixo_16
+A pontada no lado do peito dura poucos segundos e aparece ao girar o corpo.,baixo risco,baixo_05
+"Hoje, a pontada no lado do peito dura poucos segundos e aparece ao girar o corpo. Isso alterou minha rotina.",baixo risco,baixo_05
+"Há dois dias, estou com falta de ar intensa mesmo parado e meus lábios parecem arroxeados. Estou observando a evolução do sintoma.",alto risco,alto_08
+"Há dois dias, estou com respiração muito curta, tontura e suor frio. Estou observando a evolução do sintoma.",alto risco,alto_16
+Meu peito está apertado e a dor se espalha para o ombro e braço.,alto risco,alto_14
+Sinto forte peso no peito e dificuldade para respirar desde agora há pouco.,alto risco,alto_19
+"Tenho cansaço leve depois de dormir pouco, sem falta de ar ou dor no peito.",baixo risco,baixo_06
+"Desde ontem, o desconforto no tórax apareceu após exercício de braço e melhora parado. Percebi o sintoma durante minhas atividades.",baixo risco,baixo_10
+"Desde ontem, uma pressão intensa no peito começou durante a caminhada e não melhorou com repouso. Percebi o sintoma durante minhas atividades.",alto risco,alto_02
+Estou com falta de ar intensa mesmo parado e meus lábios parecem arroxeados.,alto risco,alto_08
+"Estou com respiração muito curta, tontura e suor frio.",alto risco,alto_16
+"Estou confuso, com suor frio e uma dor forte no tórax.",alto risco,alto_10
+"Hoje, tenho dor torácica intensa e sensação de desmaio desde alguns minutos atrás. Isso alterou minha rotina.",alto risco,alto_13
+Meu coração está irregular e tive uma perda breve de consciência.,alto risco,alto_18
+"Nesta manhã, estou com aperto no tórax, suor frio e náusea há vinte minutos. O episódio me deixou preocupado.",alto risco,alto_03
+"Nesta manhã, estou com desconforto muscular após atividade física e ele vem melhorando. O episódio me deixou preocupado.",baixo risco,baixo_19
+"Nesta manhã, o peito ficou sensível depois do treino, principalmente ao tocar a região. O episódio me deixou preocupado.",baixo risco,baixo_15
+"O ombro ficou dolorido após a academia, mas consigo fazer minhas atividades.",baixo risco,baixo_03
+Tenho dor torácica intensa e sensação de desmaio desde alguns minutos atrás.,alto risco,alto_13
+Tive um desmaio repentino depois de sentir o batimento irregular.,alto risco,alto_06

@@ -1,0 +1,46 @@
+expressao,sintoma_normalizado,possivel_associacao,nivel_alerta
+dor no peito,dor torácica,síndrome coronariana / outras causas,alto
+dor intensa no peito,dor torácica,síndrome coronariana / outras causas,alto
+pressão no peito,dor torácica,angina / síndrome coronariana,alto
+pressão forte no peito,dor torácica,angina / síndrome coronariana,alto
+aperto no tórax,dor torácica,angina / síndrome coronariana,alto
+peso no peito,dor torácica,angina / síndrome coronariana,alto
+queimação no peito,desconforto torácico,causa cardíaca ou digestiva,avaliar
+falta de ar,dispneia,insuficiência cardíaca / causa respiratória,alto
+dificuldade para respirar,dispneia,insuficiência cardíaca / causa respiratória,alto
+respiração curta,dispneia,insuficiência cardíaca / causa respiratória,alto
+cansaço constante,fadiga,insuficiência cardíaca / outras causas,avaliar
+fadiga,fadiga,insuficiência cardíaca / outras causas,avaliar
+cansaço aos esforços,intolerância ao esforço,insuficiência cardíaca / isquemia,avaliar
+coração acelerado,palpitação,taquicardia / arritmia,avaliar
+coração fica acelerado,palpitação,taquicardia / arritmia,avaliar
+palpitação,palpitação,arritmia,avaliar
+batimento irregular,ritmo irregular,arritmia,avaliar
+coração irregular,ritmo irregular,arritmia,avaliar
+suor frio,sudorese fria,síndrome coronariana / outras causas,alto
+náusea,náusea,síndrome coronariana / causa digestiva,avaliar
+tontura,tontura,arritmia / hipotensão / outras causas,avaliar
+quase desmaiei,pré-síncope,arritmia / hipotensão,alto
+desmaio,síncope,arritmia / outras causas,alto
+perda de consciência,síncope,arritmia / outras causas,alto
+inchaço nos tornozelos,edema periférico,insuficiência cardíaca / outras causas,avaliar
+pernas inchadas,edema periférico,insuficiência cardíaca / outras causas,avaliar
+pés inchados,edema periférico,insuficiência cardíaca / outras causas,avaliar
+tosse ao deitar,ortopneia / tosse noturna,insuficiência cardíaca / causa respiratória,avaliar
+tosse seca ao deitar,ortopneia / tosse noturna,insuficiência cardíaca / causa respiratória,avaliar
+usar mais travesseiros,ortopneia,insuficiência cardíaca / causa respiratória,avaliar
+dor nas costas,dor dorsal,causa musculoesquelética / outras causas,baixo
+dor leve nas costas,dor dorsal,causa musculoesquelética / outras causas,baixo
+pontada no peito,dor torácica atípica,causa musculoesquelética / pleurítica,avaliar
+pontada breve no peito,dor torácica atípica,causa musculoesquelética / pleurítica,avaliar
+piora quando respiro fundo,dor pleurítica,causa pleural / musculoesquelética,avaliar
+fraqueza súbita,déficit neurológico súbito,acidente vascular cerebral,alto
+um lado do corpo,déficit neurológico focal,acidente vascular cerebral,alto
+dificuldade para falar,alteração da fala,acidente vascular cerebral,alto
+fala enrolada,alteração da fala,acidente vascular cerebral,alto
+dor no braço esquerdo,irradiação para braço,síndrome coronariana,alto
+dor no maxilar,irradiação para mandíbula,síndrome coronariana,alto
+dor no ombro,dor no ombro,causa musculoesquelética / dor irradiada,avaliar
+lábios arroxeados,cianose,baixa oxigenação / causa cardiopulmonar,alto
+confusão mental,alteração do estado mental,baixa perfusão / outras causas,alto
+dor após esforço,sintoma relacionado ao esforço,angina / causa musculoesquelética,avaliar
