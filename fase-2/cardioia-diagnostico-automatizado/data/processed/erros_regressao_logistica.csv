@@ -1,0 +1,5 @@
+dataset_indice,frase,situacao,grupo_id,previsao,probabilidade_alto_risco,tipo_erro
+20,"Há dois dias, tive uma pontada curta no peito ao respirar fundo, mas ela já passou. Estou observando a evolução do sintoma.",baixo risco,baixo_12,alto risco,0.5712,falso positivo
+32,"Tive uma pontada curta no peito ao respirar fundo, mas ela já passou.",baixo risco,baixo_12,alto risco,0.5492,falso positivo
+43,Senti perda de consciência após uma sequência de palpitações.,alto risco,alto_11,baixo risco,0.3819,falso negativo
+58,"Nesta manhã, senti perda de consciência após uma sequência de palpitações. O episódio me deixou preocupado.",alto risco,alto_11,baixo risco,0.3962,falso negativo
