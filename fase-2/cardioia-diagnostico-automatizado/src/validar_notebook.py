@@ -12,7 +12,8 @@ RAIZ = Path(__file__).resolve().parents[1]
 NOTEBOOK = RAIZ / "notebooks" / "classificador_risco_tfidf.ipynb"
 
 
-def main() -> None:
+def executar_notebook() -> dict[str, object]:
+    """Executa o notebook e devolve seu namespace para auditoria automatizada."""
     documento = json.loads(NOTEBOOK.read_text(encoding="utf-8"))
     assert documento["nbformat"] == 4
     namespace = {"__name__": "__notebook_validation__"}
@@ -26,6 +27,11 @@ def main() -> None:
             exec(compile(fonte, f"{NOTEBOOK.name}:cell-{indice}", "exec"), namespace)
     finally:
         os.chdir(diretorio_original)
+    return namespace
+
+
+def main() -> None:
+    executar_notebook()
     print("Notebook validado: todas as células de código executaram sem erros.")
 
 

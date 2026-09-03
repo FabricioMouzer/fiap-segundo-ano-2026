@@ -6,7 +6,7 @@ Módulo acadêmico de apoio à triagem cardiológica que combina extração de s
 
 ## Status
 
-🟠 Desenvolvimento iniciado: dados, extrator, testes e primeiro notebook implementados.
+🟢 Pipeline validado: dados, extrator, testes, notebook TF-IDF e evidências reproduzíveis implementados.
 
 ## Guia de orientação da equipe
 
@@ -15,6 +15,7 @@ Para entender a evolução do CardioIA, o que foi realizado na Fase 1 e todo o p
 - [Visão geral das Fases 1 e 2](docs/VISAO_GERAL_FASES_1_E_2.md)
 - [Recursos, plugins, interfaces e arquitetura](docs/RECURSOS_E_ARQUITETURA.md)
 - [Dicionário de dados](data/DICIONARIO_DADOS.md)
+- [Resultados e evidências de validação](docs/RESULTADOS_VALIDACAO.md)
 
 ## Objetivos
 
@@ -93,6 +94,7 @@ No Windows PowerShell, ative o ambiente com:
 python src/gerar_dados.py
 python src/extrator_sintomas.py
 python -m unittest discover -s tests -v
+python src/gerar_evidencias.py
 jupyter notebook notebooks/classificador_risco_tfidf.ipynb
 ```
 
@@ -103,4 +105,3 @@ Link: `A INSERIR APÓS PUBLICAÇÃO COMO NÃO LISTADO`
 ## Continuidade do projeto
 
 Esta fase dá continuidade ao CardioIA iniciado na Fase 1, preservando o uso de dados sintéticos, a rastreabilidade dos artefatos e o compromisso com privacidade e IA responsável.
-

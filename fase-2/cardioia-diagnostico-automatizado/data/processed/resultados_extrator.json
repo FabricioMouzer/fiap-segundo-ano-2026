@@ -1,0 +1,166 @@
+[
+  {
+    "relato": "Há dois dias sinto uma pressão forte no peito quando subo escadas e precisei interromper minhas atividades.",
+    "achados": [
+      {
+        "expressao": "pressão forte no peito",
+        "sintoma": "dor torácica",
+        "possivel_associacao": "angina / síndrome coronariana",
+        "nivel_alerta": "alto"
+      }
+    ]
+  },
+  {
+    "relato": "Desde ontem meu coração fica acelerado e irregular mesmo quando estou sentado, dificultando meu sono.",
+    "achados": [
+      {
+        "expressao": "coração fica acelerado",
+        "sintoma": "palpitação",
+        "possivel_associacao": "taquicardia / arritmia",
+        "nivel_alerta": "avaliar"
+      }
+    ]
+  },
+  {
+    "relato": "Há uma semana sinto cansaço constante e falta de ar ao caminhar pequenas distâncias, mesmo depois de descansar.",
+    "achados": [
+      {
+        "expressao": "falta de ar",
+        "sintoma": "dispneia",
+        "possivel_associacao": "insuficiência cardíaca / causa respiratória",
+        "nivel_alerta": "alto"
+      },
+      {
+        "expressao": "cansaço constante",
+        "sintoma": "fadiga",
+        "possivel_associacao": "insuficiência cardíaca / outras causas",
+        "nivel_alerta": "avaliar"
+      }
+    ]
+  },
+  {
+    "relato": "Nesta manhã tive dor intensa no peito acompanhada de suor frio e náusea, e não consegui continuar trabalhando.",
+    "achados": [
+      {
+        "expressao": "dor intensa no peito",
+        "sintoma": "dor torácica",
+        "possivel_associacao": "síndrome coronariana / outras causas",
+        "nivel_alerta": "alto"
+      },
+      {
+        "expressao": "suor frio",
+        "sintoma": "sudorese fria",
+        "possivel_associacao": "síndrome coronariana / outras causas",
+        "nivel_alerta": "alto"
+      },
+      {
+        "expressao": "náusea",
+        "sintoma": "náusea",
+        "possivel_associacao": "síndrome coronariana / causa digestiva",
+        "nivel_alerta": "avaliar"
+      }
+    ]
+  },
+  {
+    "relato": "Há três dias percebo inchaço nos tornozelos no fim do dia e fico cansado durante tarefas domésticas simples.",
+    "achados": [
+      {
+        "expressao": "inchaço nos tornozelos",
+        "sintoma": "edema periférico",
+        "possivel_associacao": "insuficiência cardíaca / outras causas",
+        "nivel_alerta": "avaliar"
+      }
+    ]
+  },
+  {
+    "relato": "Desde a noite passada sinto tontura quando me levanto e quase desmaiei ao caminhar até o banheiro.",
+    "achados": [
+      {
+        "expressao": "tontura",
+        "sintoma": "tontura",
+        "possivel_associacao": "arritmia / hipotensão / outras causas",
+        "nivel_alerta": "avaliar"
+      },
+      {
+        "expressao": "quase desmaiei",
+        "sintoma": "pré-síncope",
+        "possivel_associacao": "arritmia / hipotensão",
+        "nivel_alerta": "alto"
+      }
+    ]
+  },
+  {
+    "relato": "Há quatro dias sinto uma dor leve nas costas após carregar peso, mas continuo realizando minhas atividades normalmente.",
+    "achados": [
+      {
+        "expressao": "dor leve nas costas",
+        "sintoma": "dor dorsal",
+        "possivel_associacao": "causa musculoesquelética / outras causas",
+        "nivel_alerta": "baixo"
+      }
+    ]
+  },
+  {
+    "relato": "Há duas semanas tenho tosse seca ao deitar e preciso usar mais travesseiros porque sinto dificuldade para respirar.",
+    "achados": [
+      {
+        "expressao": "dificuldade para respirar",
+        "sintoma": "dispneia",
+        "possivel_associacao": "insuficiência cardíaca / causa respiratória",
+        "nivel_alerta": "alto"
+      },
+      {
+        "expressao": "tosse seca ao deitar",
+        "sintoma": "ortopneia / tosse noturna",
+        "possivel_associacao": "insuficiência cardíaca / causa respiratória",
+        "nivel_alerta": "avaliar"
+      },
+      {
+        "expressao": "usar mais travesseiros",
+        "sintoma": "ortopneia",
+        "possivel_associacao": "insuficiência cardíaca / causa respiratória",
+        "nivel_alerta": "avaliar"
+      }
+    ]
+  },
+  {
+    "relato": "Desde ontem sinto uma pontada breve no peito que piora quando respiro fundo e movimenta o tronco.",
+    "achados": [
+      {
+        "expressao": "pontada breve no peito",
+        "sintoma": "dor torácica atípica",
+        "possivel_associacao": "causa musculoesquelética / pleurítica",
+        "nivel_alerta": "avaliar"
+      },
+      {
+        "expressao": "piora quando respiro fundo",
+        "sintoma": "dor pleurítica",
+        "possivel_associacao": "causa pleural / musculoesquelética",
+        "nivel_alerta": "avaliar"
+      }
+    ]
+  },
+  {
+    "relato": "Há alguns minutos comecei a sentir fraqueza súbita em um lado do corpo e dificuldade para falar, interrompendo completamente minha rotina.",
+    "achados": [
+      {
+        "expressao": "fraqueza súbita",
+        "sintoma": "déficit neurológico súbito",
+        "possivel_associacao": "acidente vascular cerebral",
+        "nivel_alerta": "alto"
+      },
+      {
+        "expressao": "um lado do corpo",
+        "sintoma": "déficit neurológico focal",
+        "possivel_associacao": "acidente vascular cerebral",
+        "nivel_alerta": "alto"
+      },
+      {
+        "expressao": "dificuldade para falar",
+        "sintoma": "alteração da fala",
+        "possivel_associacao": "acidente vascular cerebral",
+        "nivel_alerta": "alto"
+      }
+    ]
+  }
+]

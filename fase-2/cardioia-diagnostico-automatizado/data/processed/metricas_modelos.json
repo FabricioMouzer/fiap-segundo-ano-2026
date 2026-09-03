@@ -1,0 +1,41 @@
+{
+  "gerado_em_utc": "2026-09-03T18:47:24+00:00",
+  "total_amostras": 80,
+  "amostras_treino": 60,
+  "amostras_teste": 20,
+  "grupos_sem_vazamento": true,
+  "modelos": {
+    "Regressão Logística": {
+      "acuracia": 0.8,
+      "precisao_alto_risco": 0.8,
+      "recall_alto_risco": 0.8,
+      "f1_alto_risco": 0.8,
+      "matriz_confusao": [
+        [
+          8,
+          2
+        ],
+        [
+          2,
+          8
+        ]
+      ]
+    },
+    "Árvore de Decisão": {
+      "acuracia": 0.3,
+      "precisao_alto_risco": 0.25,
+      "recall_alto_risco": 0.2,
+      "f1_alto_risco": 0.222,
+      "matriz_confusao": [
+        [
+          4,
+          6
+        ],
+        [
+          8,
+          2
+        ]
+      ]
+    }
+  }
+}
