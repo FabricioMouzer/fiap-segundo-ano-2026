@@ -1,361 +1,84 @@
-# CardioIA — Visão geral das Fases 1 e 2
+# CardioIA — O que construímos nas Fases 1 e 2
 
-Documento de orientação da equipe para compreender a evolução do projeto, localizar os artefatos e acompanhar o desenvolvimento da Fase 2.
+Revisão da equipe em **05/09/2026**. Este documento substitui o plano inicial, que ainda descrevia no futuro etapas já implementadas.
 
-> **Uso acadêmico:** o CardioIA é uma simulação educacional. Não realiza diagnóstico médico, não substitui profissionais de saúde e não deve ser utilizado em atendimentos reais.
+## A evolução do trabalho
+
+A Fase 1 organizou materiais para estudar IA em cardiologia. A Fase 2 acrescentou dois módulos executáveis: um extrator por expressões e um classificador de relatos com TF-IDF. Nesta revisão, a continuidade ganhou evidência computacional pela leitura dos arquivos originais da Fase 1.
+
+## O que aproveitamos da Fase 1
+
+| Material original | Uso real na Fase 2 | Limite |
+|---|---|---|
+| CSV com 150 registros e 17 variáveis | auditoria de representação, rótulos e subgrupos | não integra o treino das 80 frases; rótulo de perfil não equivale à triagem textual |
+| Dois TXT contextuais de cardiologia | exploração de vocabulário com origem e hashes | são textos contextuais, não relatos de pacientes nem obras integrais |
+| Dicionário e governança | definição dos campos, origem sintética, privacidade e análise crítica | a base não representa uma população clínica real |
+| 100 ECGs sintéticos | preservados para próximas etapas | não usados pelo TF-IDF; não demonstram conclusão do opcional MLP |
+| XLSX e PDFs de apoio | referências da primeira entrega | não são entradas do classificador obrigatório |
+| Repositório, equipe e organização | continuidade do histórico, autores e rastreabilidade | nenhuma contribuição individual é presumida |
+
+O classificador utiliza **80 frases novas**, produzidas para a Fase 2. Não afirmamos que foram extraídas dos 150 registros da Fase 1. Consulte a [continuidade auditável](CONTINUIDADE_FASE1.md).
+
+## Como chegamos ao resultado
+
+1. Conferimos o enunciado e separamos os seis critérios obrigatórios das extensões “Ir Além”.
+2. Organizamos dez relatos completos e um mapa com 45 expressões.
+3. Implementamos leitura, normalização, busca de expressões e tratamento limitado de negação.
+4. Criamos 80 frases rotuladas, distribuídas em 40 grupos de variações linguísticas.
+5. Separamos 60 amostras de treino e 20 de teste por grupo; o TF-IDF foi ajustado somente no treino.
+6. Comparamos Regressão Logística e Árvore de Decisão, mantendo os erros visíveis.
+7. Geramos CSVs, métricas, matrizes de confusão e notebook com resultados salvos.
+8. Acrescentamos leitura verificável da base anterior e revisamos documentação, testes e apresentação.
+
+## Dois módulos com funções diferentes
+
+| Módulo | Entrada | Método | Saída |
+|---|---|---|---|
+| Extração | dez relatos + mapa | regras e expressões normalizadas | sintomas e associações educacionais |
+| Classificação | corpus de 80 frases | TF-IDF + modelo supervisionado | classe textual de baixo ou alto risco |
+
+O extrator não fornece as variáveis de entrada do classificador. Ambos processam texto, com métodos distintos. A auditoria da Fase 1 é uma terceira análise de continuidade e representação, independente da avaliação das 80 frases.
+
+## O que os resultados significam
+
+Na divisão fixa, a Regressão Logística acertou **16 de 20 frases** e reconheceu **8 de 10 relatos rotulados como alto risco**. Foram dois falsos positivos e dois falsos negativos. A Árvore de Decisão teve 30% de acurácia e 20% de recall de alto risco.
+
+Esses números descrevem um experimento pequeno e sintético. O mesmo conjunto foi usado para comparar os modelos; não existe teste externo independente que confirme generalização após a escolha. A separação por grupo evita que as duas versões da mesma frase base fiquem nos dois conjuntos, mas não elimina toda semelhança linguística entre grupos.
+
+## Recursos utilizados
+
+- Python e pandas: criação, leitura e auditoria dos dados.
+- scikit-learn: TF-IDF, pipelines, divisão por grupos, modelos e métricas.
+- Jupyter/IPython: notebook com método e resultados preservados.
+- matplotlib e seaborn: gráficos de avaliação.
+- unittest: testes dos dados, extração e continuidade.
+- GitHub: fonte oficial do código, documentação e histórico.
+
+Não é necessária chave de API nem serviço de IA pago para executar o núcleo. A [demonstração visual anterior](DEMONSTRACAO_VISUAL.md) é apoio; não comprova todos os requisitos do opcional React.
+
+## Situação da entrega
+
+Os artefatos técnicos dos cinco primeiros critérios do barema estão implementados e revisados. O sexto critério exige **vídeo de até quatro minutos publicado no YouTube como não listado e link no README**. Arquivo local, roteiro ou apresentação da equipe não substituem essa publicação.
+
+Prazo informado: **07/10/2026**, sem horário final no enunciado recuperado. A conferência do grupo e o envio no ambiente FIAP permanecem ações de encerramento. Não há comprovante de submissão neste repositório.
 
 ## Equipe
 
 | Integrante | RM |
-|---|---:|
+|---|---|
 | Fabrício Mouzer Brito | RM566777 |
 | Enzo Nunes Castanheira Gloria da Silva | RM567599 |
 | Larissa Nunes Moreira Reis | RM568280 |
 | Gabriel Rapozo Guimarães Soares | RM568480 |
 
-## Visão geral do CardioIA
+Todos devem compreender os dados, explicar os erros e revisar a entrega. Divisões anteriores eram sugestões, não registro de autoria individual.
 
-O **CardioIA: A Nova Era da Cardiologia Inteligente** é um projeto construído em etapas. Cada fase acrescenta uma nova capacidade ao ecossistema:
+## Links para revisão
 
-```mermaid
-flowchart TD
-    F1["Fase 1<br/>Preparar dados"] --> F2["Fase 2<br/>Interpretar relatos"]
-    F2 --> F3["Fase 3<br/>Monitorar pacientes"]
-    F3 --> F4["Fases seguintes<br/>Analisar, prever e integrar"]
-```
+- [Fase 1](../../../fase-1/cardioia-batimentos-de-dados/)
+- [Fase 2](../README.md)
+- [Resultados executados](RESULTADOS_VALIDACAO.md)
+- [Matriz do barema](MATRIZ_BAREMA.md)
+- [Checklist](CHECKLIST_ENTREGA.md)
 
-A lógica de evolução é:
-
-**dados → organização → interpretação → classificação → monitoramento → apoio à decisão**
-
----
-
-# Fase 1 — Batimentos de Dados
-
-## O que foi a Fase 1
-
-A Fase 1 construiu a base informacional do CardioIA. Antes de aplicar Inteligência Artificial, foi necessário demonstrar como diferentes tipos de dados poderiam ser coletados, organizados, documentados, protegidos e preparados para análises futuras.
-
-A pergunta central foi:
-
-> **Quais dados um sistema de cardiologia inteligente precisaria utilizar e como deveríamos organizá-los com responsabilidade?**
-
-## O que produzimos
-
-### 1. Dados estruturados
-
-Foi criada uma base tabular sintética com:
-
-- 150 registros;
-- 17 variáveis;
-- arquivo CSV;
-- versão documentada em XLSX.
-
-A finalidade foi representar informações organizadas de pacientes fictícios e preparar uma estrutura utilizável por modelos futuros.
-
-### 2. Dados textuais
-
-Foram criados dois exemplos de textos clínicos sintéticos para representar informações não estruturadas.
-
-Esses textos prepararam o projeto para tarefas de Processamento de Linguagem Natural — NLP, que se tornam o foco principal da Fase 2.
-
-### 3. Dados visuais
-
-Foram produzidos:
-
-- 100 imagens sintéticas de ECG;
-- arquivos PNG organizados;
-- manifesto para identificação e rastreabilidade;
-- pacote ZIP com as imagens.
-
-Esses materiais poderão apoiar atividades posteriores de classificação visual e redes neurais.
-
-### 4. Governança e privacidade
-
-A documentação registrou que:
-
-- os dados são sintéticos;
-- não foram utilizados prontuários reais;
-- não existem identificadores pessoais;
-- os rótulos possuem finalidade acadêmica;
-- fontes, scripts, sementes e limitações devem ser rastreáveis;
-- os artefatos não possuem validade diagnóstica.
-
-### 5. Organização e documentação
-
-O repositório reuniu datasets, planilhas, textos, imagens, documentação de governança, README, integrantes e evidências do trabalho. Os links públicos foram conferidos para garantir o acesso do professor.
-
-## Resultado da Fase 1
-
-A Fase 1 entregou o “combustível” do CardioIA:
-
-> **Fase 1 = criação, organização e governança dos dados.**
-
----
-
-# Fase 2 — Diagnóstico Automatizado: IA no Estetoscópio Digital
-
-## O que será a Fase 2
-
-Na Fase 2, o projeto deixa de apenas preparar dados e passa a analisá-los. Construiremos um protótipo capaz de interpretar relatos textuais sintéticos, identificar sintomas, consultar um mapa de conhecimento e classificar o nível de risco.
-
-A pergunta central será:
-
-> **Como a Inteligência Artificial pode interpretar um relato escrito e auxiliar em uma triagem inicial?**
-
-## Mapa mental da Fase 2
-
-```mermaid
-flowchart TD
-    A["Relato sintético"] --> B["Módulo 1<br/>Extração de sintomas"]
-    A --> C["Módulo 2<br/>Classificação de risco"]
-    B --> D["Mapa de conhecimento"]
-    C --> E["TF-IDF + modelo"]
-    D --> F["Resultado educacional"]
-    E --> F
-    F --> G["Métricas, erros e vieses"]
-```
-
-## Módulo 1 — Extração de sintomas
-
-### Relatos sintéticos
-
-Criaremos um arquivo TXT com 10 relatos completos. Cada relato deverá informar:
-
-- o que o paciente sente;
-- quando o sintoma começou;
-- intensidade ou evolução, quando aplicável;
-- como o problema afeta sua rotina.
-
-Exemplo:
-
-> “Há três dias sinto falta de ar ao caminhar pequenas distâncias e precisei interromper minhas atividades domésticas.”
-
-### Mapa de conhecimento
-
-Criaremos um CSV relacionando sintomas, expressões equivalentes e possíveis associações.
-
-| Sintoma | Expressão equivalente | Possível associação |
-|---|---|---|
-| dor no peito | pressão no peito | Angina |
-| dor no peito | aperto no tórax | Infarto |
-| falta de ar | dificuldade para respirar | Insuficiência cardíaca |
-| palpitação | coração acelerado | Arritmia |
-| fadiga | cansaço constante | Insuficiência cardíaca |
-
-Embora o enunciado solicite uma estrutura simples, a meta é produzir aproximadamente 30 ou mais associações para ampliar os testes.
-
-### Código de extração
-
-O programa Python deverá:
-
-1. abrir o arquivo com os relatos;
-2. ler uma frase por vez;
-3. normalizar maiúsculas, minúsculas e acentuação;
-4. procurar sintomas e expressões equivalentes;
-5. permitir múltiplos sintomas no mesmo relato;
-6. consultar o mapa de conhecimento;
-7. apresentar possíveis associações;
-8. informar quando nenhuma correspondência for encontrada;
-9. exibir um aviso de uso exclusivamente educacional.
-
-## Módulo 2 — Classificação de risco
-
-### Dataset de treinamento
-
-Criaremos uma base sintética balanceada contendo:
-
-- frases médicas simuladas;
-- rótulos de baixo ou alto risco;
-- diferentes formas de descrever sintomas semelhantes;
-- variedade linguística suficiente para evitar repetições artificiais.
-
-Exemplos:
-
-| Relato | Rótulo esperado |
-|---|---|
-| Estou com forte dor no peito, suor frio e falta de ar. | alto risco |
-| Senti um leve desconforto nas costas depois do exercício. | baixo risco |
-
-### TF-IDF
-
-O TF-IDF transformará as frases em vetores numéricos que possam ser processados pelos algoritmos.
-
-O fluxo será:
-
-**frase → tratamento do texto → TF-IDF → classificador → nível de risco**
-
-### Modelos
-
-A equipe pretende comparar:
-
-- Regressão Logística;
-- Árvore de Decisão.
-
-O modelo final será selecionado considerando desempenho, estabilidade, interpretação e capacidade de reconhecer casos de alto risco.
-
-## Avaliação do modelo
-
-A análise não ficará limitada à acurácia. Serão apresentados:
-
-- precision;
-- recall;
-- F1-score;
-- matriz de confusão;
-- falsos positivos;
-- falsos negativos;
-- comportamento diante de frases inéditas.
-
-Os falsos negativos receberão atenção especial, pois representam relatos de alto risco classificados incorretamente como baixo risco.
-
-## Vieses e limitações
-
-Serão testadas situações como:
-
-- negação: “não estou com dor no peito”;
-- múltiplos sintomas;
-- erros de digitação;
-- expressões diferentes para o mesmo sintoma;
-- intensidade e duração;
-- frases ambíguas;
-- desequilíbrio entre as classes.
-
-O trabalho deverá reconhecer que palavras isoladas não determinam doenças, TF-IDF não compreende contexto como um profissional, bases pequenas produzem métricas instáveis e acurácia elevada não significa validade clínica.
-
----
-
-# Entregáveis obrigatórios
-
-1. TXT com 10 relatos completos;
-2. CSV com o mapa de conhecimento;
-3. código Python de extração de sintomas;
-4. CSV com frases rotuladas por risco;
-5. notebook com TF-IDF;
-6. classificador treinado e testado;
-7. métricas e análise dos resultados;
-8. análise de erros, vieses e limitações;
-9. README completo;
-10. repositório público;
-11. vídeo de até quatro minutos;
-12. link do vídeo não listado no README.
-
-## Barema — 10 pontos
-
-| Critério | Pontos |
-|---|---:|
-| Relatos e mapa de conhecimento organizados | 2 |
-| Código de extração funcional | 2 |
-| Dataset simples criado corretamente | 1 |
-| Classificador treinado e testado | 2 |
-| Documentação e repositório público | 1 |
-| Vídeo demonstrativo | 2 |
-
-> O vídeo representa 20% da nota e deve ser tratado como entregável obrigatório.
-
----
-
-# Diferenciais planejados
-
-- mapa de conhecimento mais abrangente;
-- dataset balanceado;
-- comparação entre modelos;
-- matriz de confusão;
-- análise de falsos negativos;
-- testes com frases inéditas;
-- tratamento de múltiplos sintomas;
-- testes automatizados;
-- reprodutibilidade;
-- governança e aviso de uso educacional.
-
-## Atividades opcionais
-
-### Ir Além 1 — Portal React
-
-Após a conclusão da parte obrigatória, poderemos desenvolver uma interface com login simulado, proteção de rotas, pacientes fictícios, agendamentos e dashboard.
-
-### Ir Além 2 — Rede neural para ECG
-
-Também existe a possibilidade de treinar uma MLP para classificar ECGs como normal ou anormal. Essa frente só deve começar depois que os 10 pontos obrigatórios estiverem protegidos.
-
----
-
-# Divisão inicial sugerida
-
-| Frente | Responsabilidades | Responsável sugerido |
-|---|---|---|
-| Coordenação e integração | cronograma, GitHub, integração, README e entrega | Fabrício |
-| Dados e conhecimento | relatos, sintomas, expressões e revisão do mapa | Enzo |
-| NLP e Machine Learning | TF-IDF, modelos, métricas e notebook | Larissa |
-| Testes e apresentação | frases inéditas, gráficos, roteiro e vídeo | Gabriel |
-
-A divisão é operacional. Todos devem compreender e revisar o trabalho completo.
-
-# Ordem de execução
-
-## Etapa 1 — Preparação
-
-- [x] organizar o repositório;
-- [x] criar a pasta exclusiva da Fase 2;
-- [x] preparar README, plano, governança e checklist;
-- [x] preparar roteiro inicial do vídeo.
-
-## Etapa 2 — Dados
-
-- [ ] criar os 10 relatos;
-- [ ] construir o mapa de conhecimento;
-- [ ] criar o dataset de risco;
-- [ ] revisar equilíbrio e variedade.
-
-## Etapa 3 — Desenvolvimento
-
-- [ ] programar a extração;
-- [ ] aplicar TF-IDF;
-- [ ] treinar e comparar modelos;
-- [ ] organizar o notebook.
-
-## Etapa 4 — Avaliação
-
-- [ ] calcular métricas;
-- [ ] gerar matriz de confusão;
-- [ ] testar frases inéditas;
-- [ ] analisar erros e vieses.
-
-## Etapa 5 — Apresentação e auditoria
-
-- [ ] finalizar o README;
-- [ ] revisar integrantes e RMs;
-- [ ] gravar o vídeo;
-- [ ] publicar como não listado;
-- [ ] inserir e testar o link;
-- [ ] executar o projeto em ambiente limpo;
-- [ ] entregar com antecedência.
-
-# Status atual
-
-- Fase 1 concluída e documentada;
-- repositório público organizado;
-- estrutura da Fase 2 criada;
-- plano de execução disponível;
-- governança e limitações documentadas;
-- checklist do barema criado;
-- roteiro inicial do vídeo preparado.
-
-## Próximas ações
-
-1. criar os 10 relatos completos;
-2. montar o mapa de conhecimento;
-3. criar o dataset de classificação;
-4. iniciar o código de extração.
-
-# Links
-
-- [Repositório principal](https://github.com/FabricioMouzer/fiap-segundo-ano-2026)
-- [Pasta da Fase 1](../../../fase-1/cardioia-batimentos-de-dados/)
-- [Pasta da Fase 2](../)
-
-# Resumo final
-
-- **Fase 1:** construímos, organizamos e documentamos os dados do CardioIA.
-- **Fase 2:** interpretaremos relatos, extrairemos sintomas e classificaremos o risco com Machine Learning.
-
-O objetivo é apresentar uma evolução clara entre as fases e entregar uma solução acadêmica organizada, compreensível, reprodutível e responsável.
+> Uso exclusivamente acadêmico. O projeto não realiza diagnóstico e não deve orientar atendimento real.

@@ -18,4 +18,4 @@
 | smoking_status | categórica | never/former/current | tabagismo simulado |
 | diabetes_history | binária | 0/1 | diabetes simulada |
 | heart_disease_history | binária | 0/1 | histórico cardíaco simulado |
-| cardio_risk_label_synthetic | categórica | lower/higher | rótulo didático; não diagnóstico |
+| cardio_risk_label_synthetic | categórica | lower_simulated_risk/higher_simulated_risk | rótulo didático; não diagnóstico |

@@ -1,0 +1,603 @@
+{
+  "versao_auditoria": 1,
+  "finalidade": "continuidade, representação dos dados e exploração lexical; sem treinamento",
+  "fonte_tabular": {
+    "caminho": "fase-1/cardioia-batimentos-de-dados/data/numericos/cardioia_pacientes_sinteticos.csv",
+    "sha256": "5c59928fde79d5c3f4b2bb94d5af0bf7a0ab61d61068cb787788665ba3debfc9",
+    "bytes": 13913
+  },
+  "fonte_regra_simulacao": {
+    "caminho": "fase-1/cardioia-batimentos-de-dados/scripts/gerar_dataset_sintetico.py",
+    "sha256": "d298d1117501020a7328251fb5a0cdb68f9e7c305a502dceb3cd14eb2bc1fac5",
+    "bytes": 2820
+  },
+  "tabela": {
+    "registros": 150,
+    "colunas": [
+      "patient_id_synthetic",
+      "age_years",
+      "sex_at_birth",
+      "resting_sbp_mmHg",
+      "resting_dbp_mmHg",
+      "total_cholesterol_mg_dL",
+      "fasting_glucose_mg_dL",
+      "resting_heart_rate_bpm",
+      "max_heart_rate_bpm",
+      "bmi_kg_m2",
+      "chest_pain_type",
+      "exercise_induced_angina",
+      "family_history_cad",
+      "smoking_status",
+      "diabetes_history",
+      "heart_disease_history",
+      "cardio_risk_label_synthetic"
+    ],
+    "identificadores_unicos": 150,
+    "celulas_vazias": 0,
+    "rotulos_originais": {
+      "higher_simulated_risk": 7,
+      "lower_simulated_risk": 143
+    },
+    "idade_minima": 29,
+    "idade_maxima": 82,
+    "proporcao_classe_majoritaria": 0.9533333333333334
+  },
+  "subgrupos": [
+    {
+      "dimensao": "sex_at_birth",
+      "grupo": "F",
+      "registros": 70,
+      "higher_simulated_risk": 1,
+      "lower_simulated_risk": 69,
+      "proporcao_rotulo_maior": 0.014286
+    },
+    {
+      "dimensao": "sex_at_birth",
+      "grupo": "M",
+      "registros": 80,
+      "higher_simulated_risk": 6,
+      "lower_simulated_risk": 74,
+      "proporcao_rotulo_maior": 0.075
+    },
+    {
+      "dimensao": "faixa_etaria",
+      "grupo": "45 a 59",
+      "registros": 65,
+      "higher_simulated_risk": 1,
+      "lower_simulated_risk": 64,
+      "proporcao_rotulo_maior": 0.015385
+    },
+    {
+      "dimensao": "faixa_etaria",
+      "grupo": "60 ou mais",
+      "registros": 60,
+      "higher_simulated_risk": 6,
+      "lower_simulated_risk": 54,
+      "proporcao_rotulo_maior": 0.1
+    },
+    {
+      "dimensao": "faixa_etaria",
+      "grupo": "menos de 45",
+      "registros": 25,
+      "higher_simulated_risk": 0,
+      "lower_simulated_risk": 25,
+      "proporcao_rotulo_maior": 0.0
+    }
+  ],
+  "nlp": {
+    "metodo": "seção CONTEXTO; minúsculas; remoção de acentos; tokens alfabéticos; mínimo 3 letras; palavras funcionais excluídas",
+    "palavras_funcionais_excluidas": [
+      "a",
+      "ao",
+      "aos",
+      "as",
+      "ate",
+      "com",
+      "como",
+      "da",
+      "das",
+      "de",
+      "do",
+      "dos",
+      "e",
+      "ela",
+      "elas",
+      "ele",
+      "eles",
+      "em",
+      "entre",
+      "era",
+      "essa",
+      "essas",
+      "esse",
+      "esses",
+      "esta",
+      "estas",
+      "este",
+      "estes",
+      "foi",
+      "foram",
+      "ha",
+      "isso",
+      "mais",
+      "mas",
+      "na",
+      "nas",
+      "no",
+      "nos",
+      "o",
+      "os",
+      "ou",
+      "para",
+      "pela",
+      "pelas",
+      "pelo",
+      "pelos",
+      "permite",
+      "pode",
+      "podem",
+      "por",
+      "quais",
+      "qual",
+      "que",
+      "sao",
+      "se",
+      "sem",
+      "ser",
+      "seu",
+      "seus",
+      "sobre",
+      "sua",
+      "suas",
+      "tambem",
+      "um",
+      "uma",
+      "umas",
+      "uns"
+    ],
+    "textos": [
+      {
+        "fonte": {
+          "caminho": "fase-1/cardioia-batimentos-de-dados/assets/textos/texto_01_disturbances_of_the_heart_contexto.txt",
+          "sha256": "47605b368374ab7af71424304325cfbf3efc25121bd53c678bdbd80ee8e5618b",
+          "bytes": 1672
+        },
+        "natureza": "resumo contextual autoral em português sobre obra histórica",
+        "secao_analisada": "CONTEXTO",
+        "tokens_antes_filtragem": 90,
+        "tokens_apos_filtragem": 58,
+        "termos_distintos": 52,
+        "frequencias": [
+          {
+            "termo": "arterial",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "coracao",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "historico",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "linguagem",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "pressao",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "sintomas",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "abordagens",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "atual",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "cardioia",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "comparar",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "condutas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "conhecidas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "contemporanea",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "corpus",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "descricoes",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "descritos",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "discute",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "disturbios",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "entidades",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "epoca",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "eram",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "esforco",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "experimento",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "fisiologicas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "historica",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "identificar",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "inicio",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "medica",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "medicamentos",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "medidas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "medir",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "mudancas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "nao",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "natural",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "obra",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "observar",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "orientacao",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "outra",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "possivel",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "processamento",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "relacionadas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "relevante",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "ritmo",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "seculo",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "sinais",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "terapeuticas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "terminologicas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "terminologico",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "texto",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "tratamento",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "usadas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "vocabulario",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      {
+        "fonte": {
+          "caminho": "fase-1/cardioia-batimentos-de-dados/assets/textos/texto_02_lettsomian_lectures_contexto.txt",
+          "sha256": "a5ddf28b4cfe4a1fc09516f47a0b144163b2b9a1239cfb3abc0d055c8ac3b333",
+          "bytes": 1605
+        },
+        "natureza": "resumo contextual autoral em português sobre obra histórica",
+        "secao_analisada": "CONTEXTO",
+        "tokens_antes_filtragem": 90,
+        "tokens_apos_filtragem": 54,
+        "termos_distintos": 46,
+        "frequencias": [
+          {
+            "termo": "idade",
+            "ocorrencias": 4
+          },
+          {
+            "termo": "arterias",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "coracao",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "doencas",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "sintomas",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "texto",
+            "ocorrencias": 2
+          },
+          {
+            "termo": "ajuda",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "apoiar",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "associados",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "aulas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "avaliar",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "avancada",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "cardioia",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "cardiovascular",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "cardiovasculares",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "circulacao",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "clinicas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "comparado",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "comunicar",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "construir",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "corpus",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "cuidado",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "descricoes",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "diferencas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "dividido",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "extracao",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "fatores",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "foco",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "fonte",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "forma",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "historicas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "intervencoes",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "meia",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "mudancas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "nlp",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "obra",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "observacoes",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "pessoas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "primeiro",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "referencias",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "reune",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "risco",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "semelhancas",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "topicos",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "vocabulario",
+            "ocorrencias": 1
+          },
+          {
+            "termo": "voltado",
+            "ocorrencias": 1
+          }
+        ]
+      }
+    ],
+    "termos_comuns": [
+      "cardioia",
+      "coracao",
+      "corpus",
+      "descricoes",
+      "mudancas",
+      "obra",
+      "sintomas",
+      "texto",
+      "vocabulario"
+    ]
+  },
+  "experimento_classificacao_fase2": {
+    "fonte": {
+      "caminho": "fase-2/cardioia-diagnostico-automatizado/data/raw/dataset_risco.csv",
+      "sha256": "c1f1c213c302e73fe01fd7af00794ea5267e191d4928f9571862c5e2f0b28721",
+      "bytes": 9471
+    },
+    "origem": "frases elaboradas separadamente em src/gerar_dados.py",
+    "derivado_do_csv_fase1": false,
+    "treinado_nesta_auditoria": false,
+    "observacao": "Os rótulos alto risco/baixo risco das frases não equivalem aos rótulos originais da Fase 1."
+  }
+}

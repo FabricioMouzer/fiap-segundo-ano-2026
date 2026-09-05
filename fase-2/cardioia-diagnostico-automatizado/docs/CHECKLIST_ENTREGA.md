@@ -1,28 +1,29 @@
-# Checklist de entrega
+# Checklist de entrega — revisão de 05/09/2026
 
-## Barema obrigatório
+## Núcleo técnico verificado
 
-- [x] 10 relatos completos no TXT
-- [x] mapa de conhecimento organizado
-- [x] extração funcional
-- [x] dataset de risco correto e balanceado
-- [x] TF-IDF aplicado dentro do pipeline de treino
-- [x] classificador treinado e testado
-- [x] métricas e análise crítica apresentadas
-- [x] notebook executado sem erros
-- [x] README completo
-- [x] integrantes e RMs corretos
+- [x] TXT com 10 relatos completos e variados
+- [x] CSV com 45 expressões de conhecimento
+- [x] extração, negação básica e testes de regressão
+- [x] corpus de 80 frases balanceado e grupos separados
+- [x] TF-IDF treinado somente no conjunto de treino
+- [x] dois classificadores avaliados; 20 predições e 4 erros publicados
+- [x] notebook com 10 células executadas e 2 figuras embutidas
+- [x] 19 testes aprovados
+- [x] duas execuções com artefatos determinísticos
+- [x] análise executável dos dados/textos originais da Fase 1
+- [x] documentação atualizada e nomes/RMs conferidos com os dados fornecidos
 - [x] repositório público
-- [ ] vídeo com até 4 minutos
-- [ ] vídeo como não listado
-- [ ] link do vídeo testado no README
+- [x] revisão dos arquivos alterados para caminhos privados/credenciais
 
-## Auditoria final
+## Encerramento
 
-- [x] clonar o repositório em pasta limpa
-- [x] instalar dependências seguindo apenas o README
-- [x] executar scripts, testes e notebooks
-- [ ] remover credenciais, caminhos locais e dados pessoais
-- [ ] verificar ortografia e nomes da equipe
-- [ ] conferir o arquivo selecionado na plataforma FIAP
-- [ ] entregar antes dos últimos minutos
+- [x] vídeo técnico final verificado: 3min40, 1080p e legendas incorporadas
+- [ ] vídeo publicado no YouTube como não listado
+- [ ] link no README aberto sem login
+- [ ] revisão coletiva do grupo
+- [ ] confirmar horário do prazo de 07/10/2026
+- [ ] conferir campo/arquivo no ambiente FIAP
+- [ ] enviar e guardar comprovante
+
+A execução ocorreu a partir de clone novo usando bibliotecas do ambiente disponível, cujas versões estão em requirements-validado.txt. Não foi alegada uma reinstalação de todas as dependências em ambiente vazio.

@@ -1,0 +1,24 @@
+test_conserva_dataset_e_rotulos_originais (test_continuidade_fase1.TestContinuidadeFase1.test_conserva_dataset_e_rotulos_originais) ... ok
+test_fontes_identificadas_e_preservadas (test_continuidade_fase1.TestContinuidadeFase1.test_fontes_identificadas_e_preservadas) ... ok
+test_nlp_usa_conteudo_e_exclui_metadados_e_perguntas (test_continuidade_fase1.TestContinuidadeFase1.test_nlp_usa_conteudo_e_exclui_metadados_e_perguntas) ... ok
+test_subgrupos_preservam_totais_sem_contar_registro_duas_vezes (test_continuidade_fase1.TestContinuidadeFase1.test_subgrupos_preservam_totais_sem_contar_registro_duas_vezes) ... ok
+test_dataset_esta_balanceado_e_sem_duplicidades (test_dados.TestDados.test_dataset_esta_balanceado_e_sem_duplicidades) ... ok
+test_grupo_linguistico_nao_mistura_rotulos (test_dados.TestDados.test_grupo_linguistico_nao_mistura_rotulos) ... ok
+test_mapa_possui_estrutura_e_volume (test_dados.TestDados.test_mapa_possui_estrutura_e_volume) ... ok
+test_conserva_ocorrencia_afirmada_apos_ocorrencia_negada (test_extrator_sintomas.TestExtratorSintomas.test_conserva_ocorrencia_afirmada_apos_ocorrencia_negada) ... ok
+test_identifica_multiplos_sintomas (test_extrator_sintomas.TestExtratorSintomas.test_identifica_multiplos_sintomas) ... ok
+test_ignora_negacao_simples (test_extrator_sintomas.TestExtratorSintomas.test_ignora_negacao_simples) ... ok
+test_nao_apenas_nao_e_negacao (test_extrator_sintomas.TestExtratorSintomas.test_nao_apenas_nao_e_negacao) ... ok
+test_nao_confunde_parte_de_outra_palavra (test_extrator_sintomas.TestExtratorSintomas.test_nao_confunde_parte_de_outra_palavra) ... ok
+test_negacao_abrange_sintomas_enumerados (test_extrator_sintomas.TestExtratorSintomas.test_negacao_abrange_sintomas_enumerados) ... ok
+test_negacao_nao_atravessa_pontuacao_ou_adversativa (test_extrator_sintomas.TestExtratorSintomas.test_negacao_nao_atravessa_pontuacao_ou_adversativa) ... ok
+test_normaliza_acentos_e_pontuacao (test_extrator_sintomas.TestExtratorSintomas.test_normaliza_acentos_e_pontuacao) ... ok
+test_retorna_lista_vazia_sem_correspondencia (test_extrator_sintomas.TestExtratorSintomas.test_retorna_lista_vazia_sem_correspondencia) ... ok
+test_todos_os_dez_relatos_possuem_achado (test_extrator_sintomas.TestExtratorSintomas.test_todos_os_dez_relatos_possuem_achado) ... ok
+test_erro_preserva_arquivo_e_diretorio_original (test_validar_notebook.TestExecucaoNotebook.test_erro_preserva_arquivo_e_diretorio_original) ... ok
+test_persiste_stdout_tabela_e_figura (test_validar_notebook.TestExecucaoNotebook.test_persiste_stdout_tabela_e_figura) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.469s
+
+OK

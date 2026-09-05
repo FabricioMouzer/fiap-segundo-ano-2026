@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:06,000
+O CardioIA Fase 2 interpreta relatos sintéticos e classifica
+textos em baixo ou alto risco.
+
+2
+00:00:06,000 --> 00:00:12,000
+Vamos acompanhar dados, extração, treinamento, avaliação e
+testes, usando a execução real do projeto.
+
+3
+00:00:12,000 --> 00:00:21,000
+Reutilizamos o CSV da Fase 1 para estudar representação e os dois
+textos para explorar vocabulário.
+
+4
+00:00:21,000 --> 00:00:30,000
+As oitenta frases do classificador são uma base nova. Os ECGs não
+entram no modelo textual.
+
+5
+00:00:30,000 --> 00:00:41,000
+Cada relato inclui o que a pessoa simulada sentiu, quando começou
+e como afetou sua rotina.
+
+6
+00:00:41,000 --> 00:00:52,000
+A base é sintética. Os relatos apresentados são os mesmos que
+entram no extrator Python.
+
+7
+00:00:52,000 --> 00:01:01,000
+O mapa conecta expressões a sintomas normalizados, possíveis
+associações e níveis de alerta.
+
+8
+00:01:01,000 --> 00:01:10,000
+As regras tornam a extração explicável: cada achado pode ser
+rastreado até uma linha do mapa.
+
+9
+00:01:10,000 --> 00:01:19,000
+O extrator normaliza acentos, busca expressões completas e aplica
+uma heurística de negação.
+
+10
+00:01:19,000 --> 00:01:28,000
+Na revisão, o tratamento de negações foi ampliado para respeitar
+fronteiras de orações.
+
+11
+00:01:28,000 --> 00:01:38,000
+Os achados dos dez relatos são exportados para JSON e CSV,
+preservando expressão, sintoma e associação.
+
+12
+00:01:38,000 --> 00:01:47,000
+O classificador utiliza oitenta frases rotuladas, com quarenta
+exemplos em cada classe.
+
+13
+00:01:47,000 --> 00:01:56,000
+Os grupos impedem que variações da mesma frase apareçam
+simultaneamente no treino e no teste.
+
+14
+00:01:56,000 --> 00:02:04,000
+A separação usa StratifiedGroupKFold, com semente fixa,
+preservando grupos e classes.
+
+15
+00:02:04,000 --> 00:02:12,000
+O TF-IDF é ajustado dentro do pipeline, somente com os dados de
+treinamento.
+
+16
+00:02:12,000 --> 00:02:21,000
+Comparamos Regressão Logística e Árvore de Decisão na mesma
+divisão de treino e teste.
+
+17
+00:02:21,000 --> 00:02:30,000
+A execução reproduziu oitenta por cento de acurácia para a
+Regressão Logística.
+
+18
+00:02:30,000 --> 00:02:38,000
+O recall de alto risco também foi de oitenta por cento: oito
+acertos entre dez exemplos.
+
+19
+00:02:38,000 --> 00:02:47,000
+A Árvore de Decisão permanece documentada como comparação, mesmo
+com desempenho inferior.
+
+20
+00:02:47,000 --> 00:02:56,000
+Encontramos quatro erros em vinte previsões, concentrados em dois
+grupos linguísticos.
+
+21
+00:02:56,000 --> 00:03:05,000
+Dois relatos de alto risco foram classificados como baixo risco.
+Isso impede qualquer uso clínico.
+
+22
+00:03:05,000 --> 00:03:16,000
+Os 19 testes verificam dados, divisão por grupos e casos do
+extrator, incluindo negações.
+
+23
+00:03:16,000 --> 00:03:27,000
+O comando de evidências executa o notebook e atualiza métricas,
+achados e a análise dos erros.
+
+24
+00:03:27,000 --> 00:03:34,000
+A entrega reúne código reproduzível, dados, notebook executado,
+métricas, testes e documentação.
+
+25
+00:03:34,000 --> 00:03:40,000
+Este é um protótipo acadêmico de NLP. Não realiza diagnóstico e
+não substitui avaliação profissional.

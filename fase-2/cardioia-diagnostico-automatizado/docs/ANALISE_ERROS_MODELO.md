@@ -15,10 +15,10 @@ A avaliação encontrou **4 erros em 20 amostras de teste**: **2 falsos negativo
 
 ## Interpretação
 
-- O conjunto é pequeno e sintético; quatro erros não permitem conclusões clínicas.
+- O conjunto é pequeno e sintético; os 4 erros não permitem conclusões clínicas.
 - A probabilidade próxima ao limiar de decisão indica incerteza lexical do modelo, não confiança médica.
 - TF-IDF aprende padrões de palavras, mas tem compreensão limitada de negação, contexto, intensidade e temporalidade.
-- As duas variações de cada grupo receberam a mesma classificação incorreta; portanto, o problema está associado ao padrão linguístico, não a uma frase isolada.
+- Variações da mesma frase-base pertencem ao mesmo grupo; erros dessas variações não são casos clínicos independentes.
 - Os casos devem permanecer registrados como evidência transparente, sem remoção seletiva para elevar a métrica.
 
 ## Próxima melhoria recomendada

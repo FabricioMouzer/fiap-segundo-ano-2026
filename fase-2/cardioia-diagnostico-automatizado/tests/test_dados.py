@@ -21,8 +21,18 @@ class TestDados(unittest.TestCase):
             linhas = list(csv.DictReader(arquivo))
         contagem = Counter(linha["situacao"] for linha in linhas)
         self.assertEqual(contagem["alto risco"], contagem["baixo risco"])
+        self.assertGreaterEqual(len(linhas), 40)
+        self.assertEqual(set(contagem), {"alto risco", "baixo risco"})
         self.assertEqual(len({linha["frase"] for linha in linhas}), len(linhas))
         self.assertTrue(all(linha["grupo_id"] for linha in linhas))
+
+    def test_grupo_linguistico_nao_mistura_rotulos(self):
+        with (RAW / "dataset_risco.csv").open(encoding="utf-8", newline="") as arquivo:
+            linhas = list(csv.DictReader(arquivo))
+        grupos = {}
+        for linha in linhas:
+            grupos.setdefault(linha["grupo_id"], set()).add(linha["situacao"])
+        self.assertTrue(all(len(rotulos) == 1 for rotulos in grupos.values()))
 
 
 if __name__ == "__main__":

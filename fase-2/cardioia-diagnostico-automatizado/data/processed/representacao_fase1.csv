@@ -1,0 +1,6 @@
+dimensao,grupo,registros,higher_simulated_risk,lower_simulated_risk,proporcao_rotulo_maior
+sex_at_birth,F,70,1,69,0.014286
+sex_at_birth,M,80,6,74,0.075
+faixa_etaria,45 a 59,65,1,64,0.015385
+faixa_etaria,60 ou mais,60,6,54,0.1
+faixa_etaria,menos de 45,25,0,25,0.0
