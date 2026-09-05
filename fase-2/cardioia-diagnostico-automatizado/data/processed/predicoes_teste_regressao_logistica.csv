@@ -1,0 +1,21 @@
+dataset_indice,frase,situacao,grupo_id,previsao,probabilidade_alto_risco,tipo_erro
+8,Tenho uma pontada breve no peito apenas quando movimento o tronco.,baixo risco,baixo_02,baixo risco,0.4729,
+18,"Desde ontem, meu coração está irregular e tive uma perda breve de consciência. Percebi o sintoma durante minhas atividades.",alto risco,alto_18,alto risco,0.5815,
+20,"Há dois dias, tive uma pontada curta no peito ao respirar fundo, mas ela já passou. Estou observando a evolução do sintoma.",baixo risco,baixo_12,alto risco,0.5712,falso positivo
+23,"Desde ontem, tenho uma pontada breve no peito apenas quando movimento o tronco. Percebi o sintoma durante minhas atividades.",baixo risco,baixo_02,baixo risco,0.4605,
+27,"Há dois dias, sinto uma pontada superficial e rápida quando espirro ou me movimento. Estou observando a evolução do sintoma.",baixo risco,baixo_20,baixo risco,0.4787,
+32,"Tive uma pontada curta no peito ao respirar fundo, mas ela já passou.",baixo risco,baixo_12,alto risco,0.5492,falso positivo
+35,Sinto uma pontada superficial e rápida quando espirro ou me movimento.,baixo risco,baixo_20,baixo risco,0.409,
+39,"Hoje, tenho um incômodo leve no peito ao apertar o local com a mão. Isso alterou minha rotina.",baixo risco,baixo_09,baixo risco,0.4766,
+41,"Há dois dias, a falta de ar piorou rapidamente e agora não consigo completar uma frase. Estou observando a evolução do sintoma.",alto risco,alto_12,alto risco,0.5647,
+42,"Há dois dias, minha fala ficou enrolada e perdi força em um dos braços de forma súbita. Estou observando a evolução do sintoma.",alto risco,alto_20,alto risco,0.5465,
+43,Senti perda de consciência após uma sequência de palpitações.,alto risco,alto_11,baixo risco,0.3819,falso negativo
+44,Tenho um incômodo leve no peito ao apertar o local com a mão.,baixo risco,baixo_09,baixo risco,0.4817,
+46,A falta de ar piorou rapidamente e agora não consigo completar uma frase.,alto risco,alto_12,alto risco,0.5395,
+48,"Há dois dias, tenho dor leve no ombro desde que carreguei uma mochila pesada. Estou observando a evolução do sintoma.",baixo risco,baixo_16,baixo risco,0.4959,
+50,Minha fala ficou enrolada e perdi força em um dos braços de forma súbita.,alto risco,alto_20,alto risco,0.5093,
+58,"Nesta manhã, senti perda de consciência após uma sequência de palpitações. O episódio me deixou preocupado.",alto risco,alto_11,baixo risco,0.3962,falso negativo
+61,Tenho dor leve no ombro desde que carreguei uma mochila pesada.,baixo risco,baixo_16,baixo risco,0.4289,
+74,"Hoje, tenho dor torácica intensa e sensação de desmaio desde alguns minutos atrás. Isso alterou minha rotina.",alto risco,alto_13,alto risco,0.5231,
+75,Meu coração está irregular e tive uma perda breve de consciência.,alto risco,alto_18,alto risco,0.6176,
+80,Tenho dor torácica intensa e sensação de desmaio desde alguns minutos atrás.,alto risco,alto_13,alto risco,0.5458,

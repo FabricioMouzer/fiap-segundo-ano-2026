@@ -11,7 +11,7 @@ O pipeline foi executado de ponta a ponta com **80 relatos sintéticos**, sendo 
 
 ## Interpretação
 
-A **Regressão Logística** apresentou o melhor equilíbrio e é o modelo recomendado para a demonstração acadêmica. No conjunto de teste, identificou 8 de 10 relatos de alto risco. Os dois falsos negativos reforçam que o protótipo não pode ser usado para decisão clínica.
+A **Regressão Logística** é a linha de base fixa para a demonstração acadêmica. No conjunto de teste, identificou 8 de 10 relatos de alto risco. Os 2 falsos negativos reforçam que o protótipo não pode ser usado para decisão clínica. O teste contém 20 variações de apenas 10 frases-base independentes; não houve seleção do melhor fold ou ajuste de parâmetros pelo resultado.
 
 A Árvore de Decisão apresentou desempenho baixo nesta base textual pequena. O resultado foi mantido como comparação transparente, não como falha a ocultar.
 
@@ -20,7 +20,10 @@ A Árvore de Decisão apresentou desempenho baixo nesta base textual pequena. O 
 - `data/processed/resultados_extrator.json`: achados dos 10 relatos;
 - `data/processed/resultados_extrator.csv`: achados em formato tabular;
 - `data/processed/metricas_modelos.json`: métricas e matrizes de confusão;
-- `data/processed/erros_regressao_logistica.csv`: quatro previsões divergentes;
+- `data/processed/erros_regressao_logistica.csv`: 4 previsões divergentes;
+- `data/processed/predicoes_teste_regressao_logistica.csv`: todas as previsões de teste;
+- `data/processed/manifesto_execucao.json`: versões reais de Python/bibliotecas, hashes dos insumos e grupos de cada partição;
+- `data/processed/figures/`: gráficos de métricas e matrizes de confusão;
 - `docs/ANALISE_ERROS_MODELO.md`: interpretação rastreável dos erros;
 - `notebooks/classificador_risco_tfidf.ipynb`: método, treinamento, avaliação e análise crítica;
 - `tests/`: verificações automáticas dos dados e do extrator.
@@ -29,7 +32,9 @@ A Árvore de Decisão apresentou desempenho baixo nesta base textual pequena. O 
 
 ```bash
 python src/gerar_dados.py
+python src/auditar_continuidade_fase1.py
 python -m unittest discover -s tests -v
+python src/construir_notebook.py
 python src/gerar_evidencias.py
 ```
 

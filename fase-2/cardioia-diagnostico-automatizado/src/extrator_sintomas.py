@@ -17,7 +17,7 @@ class Achado:
     nivel_alerta: str
 
 
-NEGACOES = {"nao", "sem", "nega", "nunca"}
+NEGACOES = {"nao", "sem", "nega", "nego", "nunca"}
 
 
 def normalizar(texto: str) -> str:
@@ -33,22 +33,42 @@ def carregar_mapa(caminho: str | Path) -> list[dict[str, str]]:
 
 
 def esta_negada(texto_normalizado: str, expressao_normalizada: str) -> bool:
-    inicio = texto_normalizado.find(expressao_normalizada)
-    if inicio < 0:
+    """Avalia todas as ocorrências em uma oração já normalizada.
+
+    A negação abrange a enumeração na mesma oração. Uma ocorrência afirmada
+    basta para conservar o achado. É uma heurística, sem interpretação clínica.
+    """
+    ocorrencias = list(re.finditer(rf"(?<!\w){re.escape(expressao_normalizada)}(?!\w)", texto_normalizado))
+    if not ocorrencias:
         return False
-    contexto = texto_normalizado[:inicio].split()[-4:]
-    return any(token in NEGACOES for token in contexto)
+    negadas = []
+    for ocorrencia in ocorrencias:
+        contexto = texto_normalizado[:ocorrencia.start()]
+        contexto = re.sub(r"\bnao (?:so|somente|apenas)\b", "", contexto)
+        negadas.append(any(token in NEGACOES for token in contexto.split()))
+    return all(negadas)
+
+
+def segmentar_oracoes(relato: str) -> list[str]:
+    """Preserva fronteiras de negação antes de remover a pontuação."""
+    sem_acentos = unicodedata.normalize("NFKD", relato.lower())
+    sem_acentos = "".join(char for char in sem_acentos if not unicodedata.combining(char))
+    fronteiras = (
+        r"[.!?;\n]+|\b(?:mas|porem|contudo|entretanto|no entanto)\b"
+        r"|,(?=\s*(?:sinto|tenho|apresento|relato|estou com)\b)"
+    )
+    return [normalizar(parte) for parte in re.split(fronteiras, sem_acentos) if parte.strip()]
 
 
 def extrair_sintomas(relato: str, mapa: list[dict[str, str]]) -> list[Achado]:
-    texto = normalizar(relato)
+    oracoes = segmentar_oracoes(relato)
     achados: list[Achado] = []
     vistos: set[tuple[str, str]] = set()
 
     for linha in mapa:
         expressao_normalizada = normalizar(linha["expressao"])
         padrao = rf"(?<!\w){re.escape(expressao_normalizada)}(?!\w)"
-        if re.search(padrao, texto) and not esta_negada(texto, expressao_normalizada):
+        if any(re.search(padrao, texto) and not esta_negada(texto, expressao_normalizada) for texto in oracoes):
             chave = (linha["expressao"], linha["possivel_associacao"])
             if chave not in vistos:
                 vistos.add(chave)

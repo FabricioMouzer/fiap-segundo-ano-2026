@@ -1,0 +1,17 @@
+{
+  "dados_regenerados_identicos": true,
+  "duas_execucoes_metricas_identicas_sem_timestamp": true,
+  "arquivos_e_notebook_identicos_sha256": {
+    "notebooks/classificador_risco_tfidf.ipynb": "d7438fbe9c520b680df79fba8d7317ff52b74fb9f1cf97e989a4e23a761fb5f2",
+    "data/processed/predicoes_teste_regressao_logistica.csv": "890073172e9c15022ac9b0a83cbffb3c0f2fe6aaf227bbddec5eded135f1911a",
+    "data/processed/resultados_extrator.csv": "2a4b36b6d3f94cf494f923fb8e35a84fdcd004f6703d055d5eb22aafe443d02b",
+    "data/processed/manifesto_execucao.json": "e513801b2b6ffecd48300cbb504170353d4fbb41e24888ae44bfcae0effee6c0",
+    "data/processed/figures/matrizes_confusao.png": "4e6ce09a451c8c9518d5904657bbe0f19b8dcb5445c4811040a9e4f53b642978",
+    "data/processed/figures/comparacao_modelos.png": "f7c04abcf100de58c4e7855d2c14fe9394cce840be386ca9b614560d15922919"
+  },
+  "celulas_codigo_executadas": 10,
+  "celulas_com_saida": 9,
+  "figuras_embutidas_no_notebook": 2,
+  "teste_grupos_compartilhados": 0,
+  "nota": "Verificação determinística no mesmo ambiente. Não é validação cruzada ou clínica."
+}

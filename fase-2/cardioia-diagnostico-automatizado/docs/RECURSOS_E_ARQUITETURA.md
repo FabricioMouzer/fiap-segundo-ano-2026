@@ -51,9 +51,9 @@ Apresenta carregamento, validação, TF-IDF, comparação de modelos, métricas,
 
 Funciona como interface de entrega, documentação e navegação da equipe.
 
-### 4. Portal React — implementado
+### 4. Demonstração visual anterior — apoio
 
-Disponível em [CardioIA — Demonstração Acadêmica](https://cardioia-demo-fiap.fabriciomouzer2025.chatgpt.site). Recebe relatos sintéticos, apresenta achados explicáveis e reproduz no navegador a inferência da Regressão Logística validada. Não é prontuário nem sistema médico real.
+Referência: [CardioIA — Demonstração Acadêmica](https://cardioia-demo-fiap.fabriciomouzer2025.chatgpt.site). Recebe relatos sintéticos, apresenta achados explicáveis e reproduz no navegador a inferência da Regressão Logística validada. Não é prontuário nem sistema médico real. A revisão atual valida o núcleo Python; não sincroniza o extrator publicado nem comprova o opcional completo de pacientes, autenticação e agendamentos.
 
 ## Arquitetura
 
@@ -75,6 +75,10 @@ flowchart TD
 - 80 frases balanceadas no dataset inicial;
 - agrupamento de frases semelhantes para evitar vazamento treino/teste;
 - comparação de Regressão Logística e Árvore de Decisão;
-- escolha orientada pelo recall de alto risco;
+- comparação exploratória por recall de alto risco, sem teste externo independente;
 - testes de negação, múltiplos sintomas e ausência de correspondência;
 - aviso explícito de que a saída não é diagnóstico.
+
+## Continuidade executada
+
+`src/auditar_continuidade_fase1.py` lê o CSV original e dois TXT para representação, rótulos e vocabulário. Não fornece treinamento ao classificador das 80 frases. Consulte [CONTINUIDADE_FASE1.md](CONTINUIDADE_FASE1.md).

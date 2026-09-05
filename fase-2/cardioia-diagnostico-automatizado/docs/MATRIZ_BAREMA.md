@@ -1,47 +1,34 @@
 # Matriz de atendimento ao barema — CardioIA Fase 2
 
-Esta matriz relaciona cada critério obrigatório do enunciado às evidências existentes no repositório. A pontuação indicada é uma estimativa de prontidão, não uma garantia de nota.
+Revisão em 05/09/2026. Fonte: enunciado da atividade “Diagnóstico Automatizado — IA no Estetoscópio Digital”, período 03/09 a 07/10/2026, fornecido pela equipe. Pesos não representam nota garantida.
 
-## Resumo executivo
+| Critério | Peso | Estado verificado | Evidência |
+|---|---:|---|---|
+| Relatos e mapa organizados | 2 | implementado | 10 relatos e 45 expressões em data/raw |
+| Código de extração funcional | 2 | implementado e testado | src/extrator_sintomas.py; resultados_extrator.csv/json |
+| Dataset correto | 1 | implementado e validado | 80 frases únicas, 40/40 classes, 40 grupos |
+| Classificador treinado/testado | 2 | executado | notebook com 10 células executadas; métricas, 2 gráficos, 20 predições e 4 erros |
+| Documentação e GitHub público | 1 | revisados | README, instruções, limites, autores e evidências |
+| Vídeo até 4 min, YouTube não listado e link | 2 | publicação pendente | roteiro/arquivo não substituem link publicado |
 
-| Situação | Pontos do barema |
-|---|---:|
-| Evidências técnicas implementadas | 8/10 |
-| Pendente: vídeo e link público não listado | 2/10 |
-| Potencial após concluir e validar o vídeo | 10/10 |
+## Evidências de qualidade
 
-## Rastreabilidade dos critérios
+- 19 testes aprovados.
+- 60 amostras/30 grupos de treino; 20 amostras/10 grupos de teste; zero grupos compartilhados.
+- TF-IDF ajustado no treino; Regressão Logística 80% de acurácia e recall alto risco.
+- Dois falsos negativos e dois falsos positivos mantidos na avaliação.
+- Notebook, CSVs, gráficos e manifesto idênticos em duas execuções; timestamp das métricas não integra a comparação.
+- Continuidade da Fase 1 executada com fontes/hashes, sem misturar seus rótulos com o corpus textual.
 
-| Critério | Pontos | Situação | Evidências | Verificação |
-|---|---:|---|---|---|
-| Relatos e mapa de conhecimento organizados | 2 | Concluído | `data/raw/relatos_sintomas.txt`, `data/raw/mapa_conhecimento.csv`, `data/DICIONARIO_DADOS.md` | 10 relatos; 45 expressões mapeadas |
-| Código de extração funcional | 2 | Concluído | `src/extrator_sintomas.py`, `data/processed/resultados_extrator.json`, `data/processed/resultados_extrator.csv` | todos os relatos geram achados; testes automatizados aprovados |
-| Dataset criado corretamente | 1 | Concluído | `data/raw/dataset_risco.csv`, `tests/test_dados.py` | 80 frases; 40 de baixo e 40 de alto risco; sem duplicatas |
-| Classificador treinado e testado | 2 | Concluído | `notebooks/classificador_risco_tfidf.ipynb`, `data/processed/metricas_modelos.json`, `data/processed/erros_regressao_logistica.csv` | TF-IDF em pipeline; separação por grupo; métricas e erros registrados |
-| Documentação e repositório público | 1 | Concluído | `README.md`, pasta `docs/` e repositório público | instalação, execução, limitações, integrantes e RMs documentados |
-| Vídeo de até 4 minutos, não listado, com link no README | 2 | Pendente | `docs/ROTEIRO_VIDEO.md` e seção “Vídeo de demonstração” do `README.md` | gravar, publicar, inserir o link e testar em janela anônima |
+Os cinco critérios técnicos somam 8 pontos de peso no barema. Isso não é nota atribuída nem comprovação de submissão.
 
-## Evidências técnicas consolidadas
+## Encerramento obrigatório
 
-- 8 de 8 testes automatizados aprovados.
-- Pipeline executado de ponta a ponta com 60 amostras de treino e 20 de teste.
-- Separação por `grupo_id`, impedindo que variações da mesma frase apareçam em treino e teste.
-- Regressão Logística: 80% de acurácia e 80% de recall de alto risco.
-- Quatro erros registrados: dois falsos positivos e dois falsos negativos, concentrados em dois grupos linguísticos.
-- Dados exclusivamente sintéticos e limitações explicitadas.
+1. Verificar o vídeo técnico de até 4 min e publicar como não listado.
+2. Inserir o link no README e abrir sem login.
+3. Realizar revisão coletiva de método, nomes/RMs e limitações.
+4. Confirmar horário final e enviar na FIAP até 07/10/2026, preservando comprovante.
 
-## Condição de encerramento
+## Opcionais
 
-A entrega obrigatória estará pronta para submissão quando:
-
-1. o vídeo tiver no máximo quatro minutos;
-2. estiver publicado no YouTube como **não listado**;
-3. o link estiver no `README.md`;
-4. o link abrir em janela anônima;
-5. o repositório for clonado e executado novamente em ambiente limpo;
-6. a equipe conferir nomes, RMs e o arquivo final antes do envio à FIAP.
-
-## Itens “Ir Além”
-
-O portal React e a rede neural com ECG são extensões opcionais, com entregáveis próprios. Eles devem permanecer fora do caminho crítico até a conclusão do vídeo obrigatório e da auditoria final.
-
+A demonstração de relatos não comprova login, pacientes, agendamentos e demais itens do portal “Ir Além 1”. Não foi entregue MLP/Keras com ECG público do “Ir Além 2”. Esses opcionais não integram os 10 pontos do barema obrigatório acima.

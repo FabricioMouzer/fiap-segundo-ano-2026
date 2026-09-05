@@ -1,0 +1,63 @@
+{
+  "python": "3.12.13",
+  "bibliotecas": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "sha256_insumos": {
+    "data/raw/dataset_risco.csv": "c1f1c213c302e73fe01fd7af00794ea5267e191d4928f9571862c5e2f0b28721",
+    "data/raw/mapa_conhecimento.csv": "99b5c849ccc4016e7df33f1ae002588e6c5d48b7fcbe417cda4c8a11d9e7e89a",
+    "data/raw/relatos_sintomas.txt": "5e55514f4e9f169a54668e415019776dd1d6b21d430b3b2d6e5fa367263def90"
+  },
+  "semente": 42,
+  "grupos_treino": [
+    "alto_01",
+    "alto_02",
+    "alto_03",
+    "alto_04",
+    "alto_05",
+    "alto_06",
+    "alto_07",
+    "alto_08",
+    "alto_09",
+    "alto_10",
+    "alto_14",
+    "alto_15",
+    "alto_16",
+    "alto_17",
+    "alto_19",
+    "baixo_01",
+    "baixo_03",
+    "baixo_04",
+    "baixo_05",
+    "baixo_06",
+    "baixo_07",
+    "baixo_08",
+    "baixo_10",
+    "baixo_11",
+    "baixo_13",
+    "baixo_14",
+    "baixo_15",
+    "baixo_17",
+    "baixo_18",
+    "baixo_19"
+  ],
+  "grupos_teste": [
+    "alto_11",
+    "alto_12",
+    "alto_13",
+    "alto_18",
+    "alto_20",
+    "baixo_02",
+    "baixo_09",
+    "baixo_12",
+    "baixo_16",
+    "baixo_20"
+  ],
+  "modelo_demonstracao": "Regressão Logística",
+  "nota": "Execução usa bibliotecas disponíveis; versões reais registradas, sem alegar instalação do requirements.txt. Dados sintéticos; resultados sem validade clínica."
+}

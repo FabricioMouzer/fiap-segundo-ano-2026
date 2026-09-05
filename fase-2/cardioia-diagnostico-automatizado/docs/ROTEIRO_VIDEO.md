@@ -1,5 +1,7 @@
 # Roteiro final do vídeo — CardioIA Fase 2
 
+Este roteiro registra a proposta inicial. A versão final legendada preparada em 05/09/2026 usa exibição de arquivos e saídas reais preservadas da execução, com a sequência e legendas do vídeo final. A publicação não listada permanece pendente.
+
 ## Configuração
 
 - **Duração-alvo:** 3 minutos e 35 segundos a 3 minutos e 50 segundos.
@@ -85,7 +87,7 @@ python src/gerar_evidencias.py
 
 **Narração:**
 
-> O projeto possui oito testes automatizados. Eles verificam a estrutura e o equilíbrio dos dados, a ausência de duplicidades, a normalização, o tratamento de negação e a extração dos dez relatos. O pipeline pode ser reproduzido usando apenas as instruções do README.
+> O projeto possui dezenove testes automatizados. Eles verificam a estrutura e o equilíbrio dos dados, a ausência de duplicidades, a normalização, o tratamento de negação e a extração dos dez relatos. As saídas do notebook são preservadas e a auditoria lê os dados originais da Fase 1. O pipeline pode ser reproduzido usando as instruções do README.
 
 ### 3:15–3:38 — Demonstração e governança
 

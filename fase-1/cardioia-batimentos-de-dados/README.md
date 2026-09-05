@@ -27,7 +27,7 @@ O trabalho prioriza rastreabilidade, privacidade, documentação, análise de vi
 | Dados textuais | textos contextuais sobre cardiologia | 2 arquivos | `.txt` | [Texto 1](https://drive.google.com/file/d/1BbNlI70gYCpd7FA4YDGQxs3lSDy-Mnms/view) · [Texto 2](https://drive.google.com/file/d/16unqNwFppNcaUbzc-Ml6ryS4eRYcXkC7/view) |
 | Dados visuais | traçados de ECG sintéticos | 100 imagens | `.png` em `.zip` | [ZIP com 100 ECGs](https://drive.google.com/file/d/1m9SIyu2w9nHW3KeFlL0F1JUnqudw0m7n/view) |
 
-Antes da entrega, os três links devem ser testados em janela anônima e permitir leitura ou download sem solicitação de login.
+Antes da entrega, os cinco links devem ser testados em janela anônima e permitir leitura ou download sem solicitação de login.
 
 Pasta de apoio no Google Drive: [FIAP 2026 — CardioIA Fase 1 — Dados](https://drive.google.com/drive/folders/1RvTaKIOQbhe04TMe1KKybCqhSNXxvndg)
 
@@ -67,7 +67,7 @@ Essas variáveis são clinicamente plausíveis como temas de estudo, mas os valo
 
 ## Parte 2 — Dados textuais
 
-Foram preparados quatro arquivos em `assets/textos/`, contextualizados a partir de obras de domínio público do Project Gutenberg:
+Foram reunidos quatro arquivos em `assets/textos/`: dois TXT contextuais baseados em obras de domínio público do Project Gutenberg e dois PDFs de referências brasileiras:
 
 1. *Disturbances of the Heart*, de Oliver T. Osborne;
 2. *The Lettsomian Lectures on Diseases and Disorders of the Heart and Arteries in Middle and Advanced Life*, de J. Mitchell Bruce.

@@ -1,29 +1,32 @@
-# Governança, ética e limitações
+# Governança, vieses e limitações
 
-## Natureza dos dados
+## Origem e separação
 
-- Utilizar exclusivamente relatos sintéticos ou dados públicos devidamente licenciados.
-- Não incluir nomes, CPF, e-mail, telefone, prontuário ou qualquer identificador real.
-- Documentar origem, método de geração, versão e limitações de cada base.
+Os 150 perfis da Fase 1 e as 80 frases da Fase 2 são bases sintéticas distintas. A primeira usa rótulos didáticos de perfil; a segunda simula classes textuais de triagem. A análise de continuidade preserva essa diferença e registra as fontes por SHA-256. Não há prontuários reais.
 
-## Limitações esperadas
+Os dois TXT da Fase 1 são textos contextuais do projeto com referências históricas. Exploramos seu vocabulário sem transformá-los em orientação médica atual, relatos de pacientes ou treino supervisionado das 80 frases.
 
-- associação por palavras-chave não compreende contexto clínico completo;
-- TF-IDF não interpreta linguagem como um profissional de saúde;
-- base pequena pode gerar métricas instáveis;
-- frases parecidas podem provocar vazamento ou desempenho artificialmente alto;
-- negações, ironia, erros de digitação e sintomas simultâneos podem causar falhas;
-- classes e formas de escrita desbalanceadas podem favorecer determinados padrões.
+## Evidências observadas
 
-## Testes responsáveis
+- A base da Fase 1 contém 143 rótulos `lower_simulated_risk` e apenas 7 `higher_simulated_risk`. Um preditor majoritário acertaria 95,3% sem reconhecer nenhum exemplo minoritário. Isso mostra como acurácia isolada pode enganar; não é desempenho do classificador textual.
+- O corpus Fase 2 é balanceado (40/40), mas segue padrões controlados. Balanceamento de classes não demonstra diversidade populacional.
+- A divisão por `grupo_id` mantém variações da mesma frase base juntas. Reduz vazamento, sem garantir independência semântica entre grupos.
+- Os dois falsos negativos e dois falsos positivos da Regressão Logística permanecem publicados, sem remover exemplos difíceis para elevar métricas.
+- A comparação de modelos usa a mesma divisão fixa. A escolha não foi confirmada por teste externo independente.
 
-- avaliar falsos negativos de alto risco separadamente;
-- incluir variações linguísticas sem reforçar estereótipos;
-- testar frases com negação e múltiplos sintomas;
-- apresentar métricas além da acurácia;
-- não publicar alegações de validade clínica.
+## Limites de interpretação
 
-## Aviso de uso
+Não é possível estimar justiça clínica por sexo, idade ou outros grupos com esta base. As distribuições da Fase 1 refletem a simulação, não prevalência real. O classificador textual não recebe sexo/idade como campos estruturados e não foi avaliado sobre população representativa.
 
-Este projeto é uma simulação educacional de apoio à decisão. Suas saídas são hipóteses produzidas por regras e modelos simples e não constituem diagnóstico, prescrição ou orientação de emergência.
+O extrator reconhece expressões explícitas e algumas negações. Não compreende integralmente temporalidade, ironia, escopo de negação, intensidade ou linguagem indireta. TF-IDF também pode errar diante de palavras desconhecidas e contextos diferentes. Probabilidades do modelo não são probabilidades calibradas de doença.
 
+## Publicação e responsabilidade
+
+- publicar artefatos sintéticos e nomes/RMs já autorizados da equipe;
+- não incluir e-mails, credenciais, prontuários, caminhos privados ou tokens;
+- registrar fontes, método, versões e resultados reais;
+- apresentar o vídeo e os slides como explicação acadêmica;
+- não declarar opcionais concluídos sem seus entregáveis;
+- preservar revisão humana e comprovante de envio à FIAP.
+
+> Projeto educacional. As saídas não constituem diagnóstico, prescrição nem orientação para emergências.

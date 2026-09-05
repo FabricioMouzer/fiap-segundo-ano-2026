@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import importlib.metadata
+import platform
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -58,13 +61,14 @@ def exportar_erros_classificador(namespace: dict) -> tuple[Path, pd.DataFrame]:
     avaliacao.loc[divergentes & (avaliacao["situacao"] == "alto risco"), "tipo_erro"] = "falso negativo"
     avaliacao.loc[divergentes & (avaliacao["situacao"] == "baixo risco"), "tipo_erro"] = "falso positivo"
     erros = avaliacao.loc[divergentes].reset_index(drop=True)
+    avaliacao.to_csv(PROCESSADOS / "predicoes_teste_regressao_logistica.csv", index=False, encoding="utf-8")
 
     caminho = PROCESSADOS / "erros_regressao_logistica.csv"
     erros.to_csv(caminho, index=False, encoding="utf-8")
     return caminho, erros
 
 
-def escrever_relatorio_erros(erros: pd.DataFrame) -> None:
+def escrever_relatorio_erros(erros: pd.DataFrame, total_teste: int) -> None:
     falsos_negativos = int((erros["tipo_erro"] == "falso negativo").sum())
     falsos_positivos = int((erros["tipo_erro"] == "falso positivo").sum())
     grupos_com_erro = erros["grupo_id"].nunique()
@@ -78,7 +82,7 @@ def escrever_relatorio_erros(erros: pd.DataFrame) -> None:
     RELATORIO_ERROS.write_text(
         "# Análise dos erros — Regressão Logística\n\n"
         "## Resultado executivo\n\n"
-        f"A avaliação encontrou **{len(erros)} erros em 20 amostras de teste**: "
+        f"A avaliação encontrou **{len(erros)} erros em {total_teste} amostras de teste**: "
         f"**{falsos_negativos} falsos negativos** e **{falsos_positivos} falsos positivos**, "
         f"concentrados em **{grupos_com_erro} grupos linguísticos**. "
         "Os falsos negativos são o risco metodológico mais importante, pois textos rotulados como alto risco foram classificados como baixo risco.\n\n"
@@ -87,10 +91,10 @@ def escrever_relatorio_erros(erros: pd.DataFrame) -> None:
         "|---|---|---|---:|---|---|\n"
         + "\n".join(linhas)
         + "\n\n## Interpretação\n\n"
-        "- O conjunto é pequeno e sintético; quatro erros não permitem conclusões clínicas.\n"
+        f"- O conjunto é pequeno e sintético; os {len(erros)} erros não permitem conclusões clínicas.\n"
         "- A probabilidade próxima ao limiar de decisão indica incerteza lexical do modelo, não confiança médica.\n"
         "- TF-IDF aprende padrões de palavras, mas tem compreensão limitada de negação, contexto, intensidade e temporalidade.\n"
-        "- As duas variações de cada grupo receberam a mesma classificação incorreta; portanto, o problema está associado ao padrão linguístico, não a uma frase isolada.\n"
+        "- Variações da mesma frase-base pertencem ao mesmo grupo; erros dessas variações não são casos clínicos independentes.\n"
         "- Os casos devem permanecer registrados como evidência transparente, sem remoção seletiva para elevar a métrica.\n\n"
         "## Próxima melhoria recomendada\n\n"
         "Ampliar a diversidade linguística mantendo o agrupamento por `grupo_id`, repetir a validação e comparar as novas métricas com esta linha de base. "
@@ -112,12 +116,17 @@ def main() -> None:
     resultados = namespace["resultados"]
     treino, teste = namespace["treino"], namespace["teste"]
     _, erros = exportar_erros_classificador(namespace)
-    escrever_relatorio_erros(erros)
+    escrever_relatorio_erros(erros, len(teste))
     metricas = {
         "gerado_em_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "total_amostras": len(treino) + len(teste),
         "amostras_treino": len(treino),
         "amostras_teste": len(teste),
+        "grupos_treino": int(treino["grupo_id"].nunique()),
+        "grupos_teste": int(teste["grupo_id"].nunique()),
+        "ordem_classes_matriz": ["baixo risco", "alto risco"],
+        "semente": 42,
+        "split": "Primeiro fold de StratifiedGroupKFold(n_splits=4, shuffle=True, random_state=42)",
         "grupos_sem_vazamento": set(treino["grupo_id"]).isdisjoint(set(teste["grupo_id"])),
         "modelos": {},
     }
@@ -129,6 +138,7 @@ def main() -> None:
             "recall_alto_risco": round(float(alto["recall"]), 3),
             "f1_alto_risco": round(float(alto["f1-score"]), 3),
             "matriz_confusao": resultado["matriz"].tolist(),
+            "relatorio_por_classe": resultado["relatorio"],
         }
     (PROCESSADOS / "metricas_modelos.json").write_text(
         json.dumps(metricas, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
@@ -136,6 +146,9 @@ def main() -> None:
 
     regressao = metricas["modelos"]["Regressão Logística"]
     arvore = metricas["modelos"]["Árvore de Decisão"]
+    verdadeiros_positivos = regressao["matriz_confusao"][1][1]
+    falsos_negativos = regressao["matriz_confusao"][1][0]
+    total_alto = verdadeiros_positivos + falsos_negativos
     RELATORIO.write_text(f"""# Evidências de validação do pipeline
 
 ## Resultado executivo
@@ -149,7 +162,7 @@ O pipeline foi executado de ponta a ponta com **{metricas['total_amostras']} rel
 
 ## Interpretação
 
-A **Regressão Logística** apresentou o melhor equilíbrio e é o modelo recomendado para a demonstração acadêmica. No conjunto de teste, identificou 8 de 10 relatos de alto risco. Os dois falsos negativos reforçam que o protótipo não pode ser usado para decisão clínica.
+A **Regressão Logística** é a linha de base fixa para a demonstração acadêmica. No conjunto de teste, identificou {verdadeiros_positivos} de {total_alto} relatos de alto risco. Os {falsos_negativos} falsos negativos reforçam que o protótipo não pode ser usado para decisão clínica. O teste contém {metricas['amostras_teste']} variações de apenas {metricas['grupos_teste']} frases-base independentes; não houve seleção do melhor fold ou ajuste de parâmetros pelo resultado.
 
 A Árvore de Decisão apresentou desempenho baixo nesta base textual pequena. O resultado foi mantido como comparação transparente, não como falha a ocultar.
 
@@ -158,7 +171,10 @@ A Árvore de Decisão apresentou desempenho baixo nesta base textual pequena. O 
 - `data/processed/resultados_extrator.json`: achados dos 10 relatos;
 - `data/processed/resultados_extrator.csv`: achados em formato tabular;
 - `data/processed/metricas_modelos.json`: métricas e matrizes de confusão;
-- `data/processed/erros_regressao_logistica.csv`: quatro previsões divergentes;
+- `data/processed/erros_regressao_logistica.csv`: {len(erros)} previsões divergentes;
+- `data/processed/predicoes_teste_regressao_logistica.csv`: todas as previsões de teste;
+- `data/processed/manifesto_execucao.json`: versões reais de Python/bibliotecas, hashes dos insumos e grupos de cada partição;
+- `data/processed/figures/`: gráficos de métricas e matrizes de confusão;
 - `docs/ANALISE_ERROS_MODELO.md`: interpretação rastreável dos erros;
 - `notebooks/classificador_risco_tfidf.ipynb`: método, treinamento, avaliação e análise crítica;
 - `tests/`: verificações automáticas dos dados e do extrator.
@@ -167,7 +183,9 @@ A Árvore de Decisão apresentou desempenho baixo nesta base textual pequena. O 
 
 ```bash
 python src/gerar_dados.py
+python src/auditar_continuidade_fase1.py
 python -m unittest discover -s tests -v
+python src/construir_notebook.py
 python src/gerar_evidencias.py
 ```
 
@@ -175,6 +193,24 @@ python src/gerar_evidencias.py
 
 Os dados são sintéticos, pequenos e construídos com padrões linguísticos controlados. As métricas não demonstram validade clínica nem capacidade de generalização. Uma solução real exigiria dados representativos, validação externa, supervisão médica e avaliação ética e regulatória.
 """, encoding="utf-8")
+    insumos = [RAW / nome for nome in ("dataset_risco.csv", "mapa_conhecimento.csv", "relatos_sintomas.txt")]
+    manifesto = {
+        "python": platform.python_version(),
+        "bibliotecas": {nome: importlib.metadata.version(nome) for nome in ("numpy", "pandas", "scipy", "scikit-learn", "matplotlib", "seaborn")},
+        "sha256_insumos": {str(caminho.relative_to(RAIZ)): hashlib.sha256(caminho.read_bytes()).hexdigest() for caminho in insumos},
+        "semente": 42,
+        "grupos_treino": sorted(treino["grupo_id"].unique().tolist()),
+        "grupos_teste": sorted(teste["grupo_id"].unique().tolist()),
+        "modelo_demonstracao": namespace["MODELO_DEMONSTRACAO"],
+        "nota": "Execução usa bibliotecas disponíveis; versões reais registradas, sem alegar instalação do requirements.txt. Dados sintéticos; resultados sem validade clínica.",
+    }
+    (PROCESSADOS / "manifesto_execucao.json").write_text(json.dumps(manifesto, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (RAIZ / "requirements-validado.txt").write_text(
+        "# Bibliotecas do ambiente em que as evidências foram executadas.\n"
+        f"# Python {manifesto['python']}; testes usam unittest, sem pytest/Jupyter.\n"
+        + "".join(f"{nome}=={versao}\n" for nome, versao in manifesto["bibliotecas"].items()),
+        encoding="utf-8",
+    )
     print(f"Evidências geradas em {PROCESSADOS.relative_to(RAIZ)} e {RELATORIO.relative_to(RAIZ)}")
 
 
