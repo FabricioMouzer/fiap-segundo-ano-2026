@@ -80,7 +80,7 @@ A auditoria lê o CSV original de 150 registros/17 variáveis e os dois TXT cont
 
 ## Vídeo de demonstração
 
-**YouTube não listado: publicação pendente.** O link definitivo será incluído após publicação e verificação sem login. Um arquivo local ou roteiro não encerra esse critério.
+**YouTube:** https://www.youtube.com/watch?v=lRi9IlAqs2A
 
 O vídeo técnico legendado está preparado e validado: **3min40, 1080p**, com 11 etapas de arquivos e saídas reais. Consulte [identificação e legendas](docs/video/README.md) e [roteiro](docs/ROTEIRO_VIDEO.md). A apresentação da equipe explica o percurso do projeto; o vídeo técnico demonstra o funcionamento exigido pela FIAP.
 
