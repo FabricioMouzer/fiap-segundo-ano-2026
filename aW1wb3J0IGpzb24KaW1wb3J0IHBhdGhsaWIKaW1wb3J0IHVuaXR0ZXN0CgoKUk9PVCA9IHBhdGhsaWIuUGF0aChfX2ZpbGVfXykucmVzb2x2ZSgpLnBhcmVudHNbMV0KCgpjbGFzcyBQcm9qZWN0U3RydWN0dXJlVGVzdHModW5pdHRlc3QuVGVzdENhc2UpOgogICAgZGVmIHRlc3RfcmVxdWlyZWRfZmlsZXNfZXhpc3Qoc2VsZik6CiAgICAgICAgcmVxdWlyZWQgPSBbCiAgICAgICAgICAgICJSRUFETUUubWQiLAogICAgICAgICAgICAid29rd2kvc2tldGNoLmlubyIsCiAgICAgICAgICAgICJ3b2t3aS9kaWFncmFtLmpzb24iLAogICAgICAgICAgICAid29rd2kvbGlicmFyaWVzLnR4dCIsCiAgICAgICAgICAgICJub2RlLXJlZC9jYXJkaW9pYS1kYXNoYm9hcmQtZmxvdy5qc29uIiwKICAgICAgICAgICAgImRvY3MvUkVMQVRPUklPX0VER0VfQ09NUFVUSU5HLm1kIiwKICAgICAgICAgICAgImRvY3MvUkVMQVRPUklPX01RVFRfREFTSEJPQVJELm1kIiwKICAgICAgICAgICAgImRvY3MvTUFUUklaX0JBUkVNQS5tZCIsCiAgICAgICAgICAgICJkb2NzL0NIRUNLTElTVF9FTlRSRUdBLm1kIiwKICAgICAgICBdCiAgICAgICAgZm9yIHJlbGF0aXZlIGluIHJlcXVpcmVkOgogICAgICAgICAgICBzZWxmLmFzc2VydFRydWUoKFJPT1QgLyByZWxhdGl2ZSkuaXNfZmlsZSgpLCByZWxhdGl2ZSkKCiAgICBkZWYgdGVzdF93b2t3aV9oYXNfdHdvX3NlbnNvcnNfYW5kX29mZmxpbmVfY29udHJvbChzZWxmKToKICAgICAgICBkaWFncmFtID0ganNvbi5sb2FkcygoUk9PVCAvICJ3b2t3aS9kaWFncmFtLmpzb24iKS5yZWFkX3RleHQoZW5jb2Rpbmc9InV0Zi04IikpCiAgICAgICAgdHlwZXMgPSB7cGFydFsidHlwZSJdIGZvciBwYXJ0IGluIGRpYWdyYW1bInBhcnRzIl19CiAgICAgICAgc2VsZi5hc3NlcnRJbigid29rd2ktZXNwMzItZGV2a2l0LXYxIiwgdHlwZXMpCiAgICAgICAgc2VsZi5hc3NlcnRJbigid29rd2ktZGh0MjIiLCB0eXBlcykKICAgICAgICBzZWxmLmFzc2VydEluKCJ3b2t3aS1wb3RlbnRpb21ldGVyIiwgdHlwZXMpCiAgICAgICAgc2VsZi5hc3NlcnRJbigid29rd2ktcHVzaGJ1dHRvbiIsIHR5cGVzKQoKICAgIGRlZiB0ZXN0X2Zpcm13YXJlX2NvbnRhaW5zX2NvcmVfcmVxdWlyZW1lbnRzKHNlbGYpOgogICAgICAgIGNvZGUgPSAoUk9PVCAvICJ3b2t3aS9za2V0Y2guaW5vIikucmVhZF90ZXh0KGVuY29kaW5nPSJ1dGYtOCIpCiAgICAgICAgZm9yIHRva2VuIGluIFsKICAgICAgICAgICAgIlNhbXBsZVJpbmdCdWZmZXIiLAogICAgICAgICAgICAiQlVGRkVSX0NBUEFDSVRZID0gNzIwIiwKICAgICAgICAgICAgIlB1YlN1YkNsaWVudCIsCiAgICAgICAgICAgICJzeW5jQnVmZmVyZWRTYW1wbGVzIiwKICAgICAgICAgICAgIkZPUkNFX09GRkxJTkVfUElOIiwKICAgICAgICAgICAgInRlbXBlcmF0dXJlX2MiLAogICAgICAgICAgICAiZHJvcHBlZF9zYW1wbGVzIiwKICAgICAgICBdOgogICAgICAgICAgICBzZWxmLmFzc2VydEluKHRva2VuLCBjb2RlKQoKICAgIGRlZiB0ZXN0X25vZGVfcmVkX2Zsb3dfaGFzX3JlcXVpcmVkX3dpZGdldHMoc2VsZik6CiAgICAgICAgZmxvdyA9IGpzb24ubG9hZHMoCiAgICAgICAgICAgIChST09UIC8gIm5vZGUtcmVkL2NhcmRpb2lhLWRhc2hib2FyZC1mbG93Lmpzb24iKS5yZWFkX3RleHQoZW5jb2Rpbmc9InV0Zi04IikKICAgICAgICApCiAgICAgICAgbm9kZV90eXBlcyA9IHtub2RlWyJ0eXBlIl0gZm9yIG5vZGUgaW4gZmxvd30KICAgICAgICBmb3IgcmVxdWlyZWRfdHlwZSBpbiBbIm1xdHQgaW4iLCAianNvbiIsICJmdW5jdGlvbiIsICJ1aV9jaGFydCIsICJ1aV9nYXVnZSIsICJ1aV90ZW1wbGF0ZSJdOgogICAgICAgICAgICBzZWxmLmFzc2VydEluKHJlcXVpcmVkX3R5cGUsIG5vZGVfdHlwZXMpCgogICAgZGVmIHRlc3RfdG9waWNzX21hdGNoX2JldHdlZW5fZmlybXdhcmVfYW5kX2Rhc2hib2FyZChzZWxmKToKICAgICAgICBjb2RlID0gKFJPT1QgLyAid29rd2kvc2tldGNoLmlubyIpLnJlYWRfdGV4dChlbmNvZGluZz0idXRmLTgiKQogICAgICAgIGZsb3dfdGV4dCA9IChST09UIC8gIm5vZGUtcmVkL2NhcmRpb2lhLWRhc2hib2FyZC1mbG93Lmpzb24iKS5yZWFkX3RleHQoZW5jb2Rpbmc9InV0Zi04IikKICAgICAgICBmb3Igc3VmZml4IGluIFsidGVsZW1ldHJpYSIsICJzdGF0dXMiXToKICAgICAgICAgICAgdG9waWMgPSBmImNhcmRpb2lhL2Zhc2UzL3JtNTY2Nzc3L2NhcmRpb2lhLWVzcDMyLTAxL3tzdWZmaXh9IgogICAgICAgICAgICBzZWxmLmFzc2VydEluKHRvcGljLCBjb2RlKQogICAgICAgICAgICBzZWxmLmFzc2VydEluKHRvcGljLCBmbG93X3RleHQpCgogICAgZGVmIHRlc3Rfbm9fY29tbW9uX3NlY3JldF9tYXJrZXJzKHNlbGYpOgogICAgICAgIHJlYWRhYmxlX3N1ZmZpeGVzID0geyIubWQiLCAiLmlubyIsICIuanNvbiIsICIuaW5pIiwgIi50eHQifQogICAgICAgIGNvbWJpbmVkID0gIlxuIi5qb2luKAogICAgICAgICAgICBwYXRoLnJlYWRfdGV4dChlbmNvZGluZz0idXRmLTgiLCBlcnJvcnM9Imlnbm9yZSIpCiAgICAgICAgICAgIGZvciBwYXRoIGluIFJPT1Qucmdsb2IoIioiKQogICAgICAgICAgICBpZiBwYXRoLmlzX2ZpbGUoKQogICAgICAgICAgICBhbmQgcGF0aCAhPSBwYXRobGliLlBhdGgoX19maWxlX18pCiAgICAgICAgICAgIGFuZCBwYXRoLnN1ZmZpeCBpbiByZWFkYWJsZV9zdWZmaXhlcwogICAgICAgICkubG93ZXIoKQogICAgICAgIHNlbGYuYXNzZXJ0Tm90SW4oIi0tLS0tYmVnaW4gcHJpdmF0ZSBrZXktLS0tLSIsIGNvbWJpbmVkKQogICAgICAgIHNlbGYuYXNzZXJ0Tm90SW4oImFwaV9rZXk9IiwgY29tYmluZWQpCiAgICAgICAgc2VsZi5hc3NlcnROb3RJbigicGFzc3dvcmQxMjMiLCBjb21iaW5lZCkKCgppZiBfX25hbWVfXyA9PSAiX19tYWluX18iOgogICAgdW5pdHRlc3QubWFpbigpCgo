@@ -1,0 +1,78 @@
+import json
+import pathlib
+import unittest
+
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+
+
+class ProjectStructureTests(unittest.TestCase):
+    def test_required_files_exist(self):
+        required = [
+            "README.md",
+            "wokwi/sketch.ino",
+            "wokwi/diagram.json",
+            "wokwi/libraries.txt",
+            "node-red/cardioia-dashboard-flow.json",
+            "docs/RELATORIO_EDGE_COMPUTING.md",
+            "docs/RELATORIO_MQTT_DASHBOARD.md",
+            "docs/MATRIZ_BAREMA.md",
+            "docs/CHECKLIST_ENTREGA.md",
+        ]
+        for relative in required:
+            self.assertTrue((ROOT / relative).is_file(), relative)
+
+    def test_wokwi_has_two_sensors_and_offline_control(self):
+        diagram = json.loads((ROOT / "wokwi/diagram.json").read_text(encoding="utf-8"))
+        types = {part["type"] for part in diagram["parts"]}
+        self.assertIn("wokwi-esp32-devkit-v1", types)
+        self.assertIn("wokwi-dht22", types)
+        self.assertIn("wokwi-potentiometer", types)
+        self.assertIn("wokwi-pushbutton", types)
+
+    def test_firmware_contains_core_requirements(self):
+        code = (ROOT / "wokwi/sketch.ino").read_text(encoding="utf-8")
+        for token in [
+            "SampleRingBuffer",
+            "BUFFER_CAPACITY = 720",
+            "PubSubClient",
+            "syncBufferedSamples",
+            "FORCE_OFFLINE_PIN",
+            "temperature_c",
+            "dropped_samples",
+        ]:
+            self.assertIn(token, code)
+
+    def test_node_red_flow_has_required_widgets(self):
+        flow = json.loads(
+            (ROOT / "node-red/cardioia-dashboard-flow.json").read_text(encoding="utf-8")
+        )
+        node_types = {node["type"] for node in flow}
+        for required_type in ["mqtt in", "json", "function", "ui_chart", "ui_gauge", "ui_template"]:
+            self.assertIn(required_type, node_types)
+
+    def test_topics_match_between_firmware_and_dashboard(self):
+        code = (ROOT / "wokwi/sketch.ino").read_text(encoding="utf-8")
+        flow_text = (ROOT / "node-red/cardioia-dashboard-flow.json").read_text(encoding="utf-8")
+        for suffix in ["telemetria", "status"]:
+            topic = f"cardioia/fase3/rm566777/cardioia-esp32-01/{suffix}"
+            self.assertIn(topic, code)
+            self.assertIn(topic, flow_text)
+
+    def test_no_common_secret_markers(self):
+        readable_suffixes = {".md", ".ino", ".json", ".ini", ".txt"}
+        combined = "\n".join(
+            path.read_text(encoding="utf-8", errors="ignore")
+            for path in ROOT.rglob("*")
+            if path.is_file()
+            and path != pathlib.Path(__file__)
+            and path.suffix in readable_suffixes
+        ).lower()
+        self.assertNotIn("-----begin private key-----", combined)
+        self.assertNotIn("api_key=", combined)
+        self.assertNotIn("password123", combined)
+
+
+if __name__ == "__main__":
+    unittest.main()
+

@@ -62,9 +62,9 @@ Se o limite for atingido, a amostra mais antiga é substituída e o contador `dr
 ## Tópicos MQTT
 
 ```text
-cardioia/fase3/cardioia-esp32-01/telemetria
-cardioia/fase3/cardioia-esp32-01/alerta
-cardioia/fase3/cardioia-esp32-01/status
+cardioia/fase3/rm566777/cardioia-esp32-01/telemetria
+cardioia/fase3/rm566777/cardioia-esp32-01/alerta
+cardioia/fase3/rm566777/cardioia-esp32-01/status
 ```
 
 Exemplo de telemetria:
@@ -109,7 +109,7 @@ O broker público é adequado somente a dados sintéticos. Não publique informa
 2. Importe [`node-red/cardioia-dashboard-flow.json`](node-red/cardioia-dashboard-flow.json).
 3. Faça o deploy.
 4. Abra `/ui` no endereço do Node-RED.
-5. Confirme o recebimento do tópico `cardioia/fase3/cardioia-esp32-01/#`.
+5. Confirme o recebimento do tópico `cardioia/fase3/rm566777/cardioia-esp32-01/#`.
 
 ## Documentação
 
