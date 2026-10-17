@@ -2,8 +2,8 @@
 
 ## Informações administrativas
 
-- [ ] confirmar os integrantes e RMs desta fase
-- [ ] registrar prazo e horário exatos
+- [x] confirmar os integrantes e RMs desta fase
+- [ ] registrar prazo e horário exatos exibidos no Portal FIAP
 - [ ] confirmar formato exigido no ambiente FIAP
 - [ ] registrar divisão de responsabilidades
 
@@ -38,6 +38,8 @@
 - [x] estado do buffer e conexão incluído
 - [ ] publicação real no broker validada
 - [ ] flow importado sem erro
+- [ ] Node-RED instalado e inicializado no Windows
+- [ ] pacote `node-red-dashboard` instalado para compatibilidade com o flow acadêmico
 - [ ] dashboard executado
 - [ ] condições normal, BPM alto, BPM baixo e temperatura alta testadas
 - [ ] prints legíveis capturados
