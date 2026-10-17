@@ -8,7 +8,7 @@ Protótipo acadêmico de monitoramento contínuo de sinais vitais simulados, int
 
 **Base técnica inicial implementada em branch de desenvolvimento.** O código, o circuito e o fluxo do dashboard ainda precisam ser executados no Wokwi e no Node-RED antes de serem considerados entregues.
 
-**Prazo:** aguardando confirmação da equipe.
+**Prazo:** aguardando registro da data e do horário exatos exibidos no Portal FIAP. O texto do enunciado arquivado no projeto não contém essa informação.
 
 ## Escopo obrigatório
 
@@ -105,7 +105,7 @@ O broker público é adequado somente a dados sintéticos. Não publique informa
 
 ## Como executar o dashboard
 
-1. Instale o Node-RED e o pacote `node-red-dashboard`.
+1. Siga o guia [`docs/INSTALACAO_NODE_RED_WINDOWS.md`](docs/INSTALACAO_NODE_RED_WINDOWS.md).
 2. Importe [`node-red/cardioia-dashboard-flow.json`](node-red/cardioia-dashboard-flow.json).
 3. Faça o deploy.
 4. Abra `/ui` no endereço do Node-RED.
@@ -128,14 +128,12 @@ O broker público é adequado somente a dados sintéticos. Não publique informa
 
 A Fase 3 reutiliza os princípios de privacidade, transparência, rastreabilidade e validação das fases anteriores. Os modelos da Fase 2 não são usados para tomar decisões clínicas neste firmware.
 
-## Equipe — confirmação pendente
+## Equipe confirmada
 
-| Integrante da fase anterior | RM |
+| Integrante | RM |
 |---|---|
 | Fabrício Mouzer Brito | RM566777 |
 | Enzo Nunes Castanheira Gloria da Silva | RM567599 |
 | Larissa Nunes Moreira Reis | RM568280 |
 | Gabriel Rapozo Guimarães Soares | RM568480 |
-
-Antes da entrega, a permanência dos integrantes deve ser confirmada e registrada no checklist.
 
