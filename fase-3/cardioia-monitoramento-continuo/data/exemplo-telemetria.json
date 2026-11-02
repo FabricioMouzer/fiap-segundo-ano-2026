@@ -1,0 +1,14 @@
+{
+  "device_id": "cardioia-esp32-01",
+  "sequence": 42,
+  "uptime_ms": 210000,
+  "temperature_c": 36.7,
+  "humidity_pct": 58.2,
+  "bpm": 82,
+  "alert_code": 0,
+  "alert": "normal",
+  "source": "live",
+  "buffer_pending": 0,
+  "dropped_samples": 0
+}
+

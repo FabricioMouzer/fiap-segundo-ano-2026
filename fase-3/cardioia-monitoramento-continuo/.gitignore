@@ -1,0 +1,9 @@
+.pio/
+.vscode/
+.venv/
+__pycache__/
+*.pyc
+flows_cred.json
+secrets.h
+.env
+

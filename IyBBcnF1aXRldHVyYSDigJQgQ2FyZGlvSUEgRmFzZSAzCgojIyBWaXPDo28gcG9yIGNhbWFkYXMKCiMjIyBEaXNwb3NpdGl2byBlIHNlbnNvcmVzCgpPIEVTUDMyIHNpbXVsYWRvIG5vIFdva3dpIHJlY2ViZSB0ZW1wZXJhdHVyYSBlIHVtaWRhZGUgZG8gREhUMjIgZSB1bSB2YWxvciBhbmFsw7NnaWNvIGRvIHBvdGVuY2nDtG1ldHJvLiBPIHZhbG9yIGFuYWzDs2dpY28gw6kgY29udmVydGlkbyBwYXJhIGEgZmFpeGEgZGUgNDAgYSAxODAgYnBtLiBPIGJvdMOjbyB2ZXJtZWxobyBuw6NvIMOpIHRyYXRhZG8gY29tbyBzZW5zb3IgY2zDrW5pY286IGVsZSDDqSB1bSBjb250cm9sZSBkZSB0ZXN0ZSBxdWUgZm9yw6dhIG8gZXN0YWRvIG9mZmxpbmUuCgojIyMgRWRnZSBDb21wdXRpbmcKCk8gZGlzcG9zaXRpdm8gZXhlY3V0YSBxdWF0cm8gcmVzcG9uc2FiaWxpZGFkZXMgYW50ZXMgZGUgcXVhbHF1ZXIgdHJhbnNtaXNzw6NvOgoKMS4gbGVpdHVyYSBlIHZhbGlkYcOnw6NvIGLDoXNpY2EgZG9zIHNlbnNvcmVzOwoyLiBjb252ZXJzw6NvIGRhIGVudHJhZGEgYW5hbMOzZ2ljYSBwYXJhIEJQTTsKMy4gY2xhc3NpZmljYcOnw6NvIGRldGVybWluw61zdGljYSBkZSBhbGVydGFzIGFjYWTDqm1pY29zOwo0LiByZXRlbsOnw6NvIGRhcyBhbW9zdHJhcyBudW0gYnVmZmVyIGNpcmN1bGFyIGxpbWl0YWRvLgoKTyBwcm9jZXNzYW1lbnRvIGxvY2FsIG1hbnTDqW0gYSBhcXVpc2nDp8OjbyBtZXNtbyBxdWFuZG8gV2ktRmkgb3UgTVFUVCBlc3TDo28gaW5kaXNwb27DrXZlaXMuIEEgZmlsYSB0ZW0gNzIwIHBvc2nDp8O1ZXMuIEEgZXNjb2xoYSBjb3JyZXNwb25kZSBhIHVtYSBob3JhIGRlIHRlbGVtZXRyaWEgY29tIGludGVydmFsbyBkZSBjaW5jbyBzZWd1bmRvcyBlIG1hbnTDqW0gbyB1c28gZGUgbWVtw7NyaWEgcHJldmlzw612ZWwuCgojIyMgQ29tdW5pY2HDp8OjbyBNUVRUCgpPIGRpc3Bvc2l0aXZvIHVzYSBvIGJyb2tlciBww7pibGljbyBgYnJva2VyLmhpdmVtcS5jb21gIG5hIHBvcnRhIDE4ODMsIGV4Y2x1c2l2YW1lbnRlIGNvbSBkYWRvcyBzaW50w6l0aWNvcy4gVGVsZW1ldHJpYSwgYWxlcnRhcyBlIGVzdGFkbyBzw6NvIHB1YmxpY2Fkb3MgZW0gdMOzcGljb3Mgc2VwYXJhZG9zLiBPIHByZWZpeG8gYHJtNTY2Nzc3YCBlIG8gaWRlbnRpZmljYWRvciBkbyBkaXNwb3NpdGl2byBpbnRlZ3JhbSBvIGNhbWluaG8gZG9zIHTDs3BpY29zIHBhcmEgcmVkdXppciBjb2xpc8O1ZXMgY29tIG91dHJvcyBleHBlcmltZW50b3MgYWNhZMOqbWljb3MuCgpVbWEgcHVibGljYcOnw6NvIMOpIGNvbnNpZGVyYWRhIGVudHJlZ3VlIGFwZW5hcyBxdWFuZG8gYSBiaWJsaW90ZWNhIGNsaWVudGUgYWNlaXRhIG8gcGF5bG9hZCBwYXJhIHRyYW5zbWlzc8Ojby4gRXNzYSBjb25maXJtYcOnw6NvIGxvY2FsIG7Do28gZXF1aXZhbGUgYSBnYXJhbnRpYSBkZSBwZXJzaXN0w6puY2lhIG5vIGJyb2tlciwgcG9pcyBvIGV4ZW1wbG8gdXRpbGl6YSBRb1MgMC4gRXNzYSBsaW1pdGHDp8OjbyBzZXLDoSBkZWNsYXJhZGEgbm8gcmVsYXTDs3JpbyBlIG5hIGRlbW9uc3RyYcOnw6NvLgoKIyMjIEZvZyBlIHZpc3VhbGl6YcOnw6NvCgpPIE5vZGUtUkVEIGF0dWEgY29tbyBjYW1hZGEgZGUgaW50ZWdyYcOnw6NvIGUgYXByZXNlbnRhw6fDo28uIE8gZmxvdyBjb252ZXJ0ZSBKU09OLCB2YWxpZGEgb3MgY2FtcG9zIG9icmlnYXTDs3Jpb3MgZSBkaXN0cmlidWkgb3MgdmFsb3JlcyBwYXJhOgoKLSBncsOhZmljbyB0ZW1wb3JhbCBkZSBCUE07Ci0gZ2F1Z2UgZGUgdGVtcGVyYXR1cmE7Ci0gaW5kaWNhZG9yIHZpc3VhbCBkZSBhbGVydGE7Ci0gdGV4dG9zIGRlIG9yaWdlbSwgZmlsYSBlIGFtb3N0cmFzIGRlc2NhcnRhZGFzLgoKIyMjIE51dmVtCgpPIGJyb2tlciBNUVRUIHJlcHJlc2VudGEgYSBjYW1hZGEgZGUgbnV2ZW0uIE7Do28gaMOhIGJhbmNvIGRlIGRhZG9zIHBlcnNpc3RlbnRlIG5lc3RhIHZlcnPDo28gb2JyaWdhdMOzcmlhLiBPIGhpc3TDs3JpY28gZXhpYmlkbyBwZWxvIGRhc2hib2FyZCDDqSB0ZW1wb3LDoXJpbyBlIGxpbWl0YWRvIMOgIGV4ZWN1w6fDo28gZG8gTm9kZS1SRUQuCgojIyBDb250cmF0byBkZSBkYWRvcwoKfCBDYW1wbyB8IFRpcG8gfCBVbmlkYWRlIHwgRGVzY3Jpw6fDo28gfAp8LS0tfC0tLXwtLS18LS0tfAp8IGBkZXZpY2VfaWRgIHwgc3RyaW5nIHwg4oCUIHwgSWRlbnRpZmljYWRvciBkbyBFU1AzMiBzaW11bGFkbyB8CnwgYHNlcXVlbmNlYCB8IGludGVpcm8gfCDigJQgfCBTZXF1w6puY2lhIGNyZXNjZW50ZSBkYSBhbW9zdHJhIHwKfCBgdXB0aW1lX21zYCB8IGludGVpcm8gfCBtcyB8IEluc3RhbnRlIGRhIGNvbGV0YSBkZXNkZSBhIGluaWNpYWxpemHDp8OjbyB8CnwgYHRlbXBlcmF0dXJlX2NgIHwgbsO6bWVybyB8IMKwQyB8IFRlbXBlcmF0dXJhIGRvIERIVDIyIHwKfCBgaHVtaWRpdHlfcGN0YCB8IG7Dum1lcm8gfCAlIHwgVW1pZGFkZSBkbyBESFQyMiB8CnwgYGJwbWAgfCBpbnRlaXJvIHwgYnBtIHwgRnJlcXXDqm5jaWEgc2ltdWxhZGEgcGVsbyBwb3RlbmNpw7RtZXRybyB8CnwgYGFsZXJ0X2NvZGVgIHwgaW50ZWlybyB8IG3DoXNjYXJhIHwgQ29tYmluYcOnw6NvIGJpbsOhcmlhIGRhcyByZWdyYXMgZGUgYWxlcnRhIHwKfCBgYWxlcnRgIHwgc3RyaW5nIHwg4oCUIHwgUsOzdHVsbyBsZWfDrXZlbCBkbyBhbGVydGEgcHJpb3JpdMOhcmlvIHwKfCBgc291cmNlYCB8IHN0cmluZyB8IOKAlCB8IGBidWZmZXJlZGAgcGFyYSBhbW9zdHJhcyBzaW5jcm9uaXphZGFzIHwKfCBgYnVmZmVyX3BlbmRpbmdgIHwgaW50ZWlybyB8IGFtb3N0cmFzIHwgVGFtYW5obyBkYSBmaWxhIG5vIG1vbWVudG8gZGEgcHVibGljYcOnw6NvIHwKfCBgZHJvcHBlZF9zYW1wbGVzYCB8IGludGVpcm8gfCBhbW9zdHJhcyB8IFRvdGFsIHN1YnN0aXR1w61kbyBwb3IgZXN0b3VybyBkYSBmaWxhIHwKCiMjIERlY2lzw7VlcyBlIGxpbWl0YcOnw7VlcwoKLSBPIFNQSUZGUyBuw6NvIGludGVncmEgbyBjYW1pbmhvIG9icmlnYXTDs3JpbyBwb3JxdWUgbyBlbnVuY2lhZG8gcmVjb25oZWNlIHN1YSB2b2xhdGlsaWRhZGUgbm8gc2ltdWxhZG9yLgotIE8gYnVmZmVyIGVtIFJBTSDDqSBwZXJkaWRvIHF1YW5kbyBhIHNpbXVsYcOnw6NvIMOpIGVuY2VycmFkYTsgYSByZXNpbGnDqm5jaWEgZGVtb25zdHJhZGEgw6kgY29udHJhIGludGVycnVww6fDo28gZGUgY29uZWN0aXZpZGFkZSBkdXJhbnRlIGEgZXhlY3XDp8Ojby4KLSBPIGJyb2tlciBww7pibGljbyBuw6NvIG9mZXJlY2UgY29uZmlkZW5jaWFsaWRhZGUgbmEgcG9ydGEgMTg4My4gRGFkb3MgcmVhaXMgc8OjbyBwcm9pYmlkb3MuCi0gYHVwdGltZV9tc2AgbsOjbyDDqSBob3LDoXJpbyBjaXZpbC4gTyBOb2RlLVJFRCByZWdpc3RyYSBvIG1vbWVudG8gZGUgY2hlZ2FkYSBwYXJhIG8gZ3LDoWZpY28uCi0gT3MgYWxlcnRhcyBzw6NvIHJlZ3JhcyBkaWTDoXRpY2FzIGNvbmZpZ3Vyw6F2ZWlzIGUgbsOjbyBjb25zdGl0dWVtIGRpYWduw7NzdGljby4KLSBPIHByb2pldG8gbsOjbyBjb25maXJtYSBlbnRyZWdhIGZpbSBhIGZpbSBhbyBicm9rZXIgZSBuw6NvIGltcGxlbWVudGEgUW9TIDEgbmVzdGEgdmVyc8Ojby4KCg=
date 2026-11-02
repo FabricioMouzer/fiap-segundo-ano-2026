@@ -1,0 +1,63 @@
+# Arquitetura — CardioIA Fase 3
+
+## Visão por camadas
+
+### Dispositivo e sensores
+
+O ESP32 simulado no Wokwi recebe temperatura e umidade do DHT22 e um valor analógico do potenciômetro. O valor analógico é convertido para a faixa de 40 a 180 bpm. O botão vermelho não é tratado como sensor clínico: ele é um controle de teste que força o estado offline.
+
+### Edge Computing
+
+O dispositivo executa quatro responsabilidades antes de qualquer transmissão:
+
+1. leitura e validação básica dos sensores;
+2. conversão da entrada analógica para BPM;
+3. classificação determinística de alertas acadêmicos;
+4. retenção das amostras num buffer circular limitado.
+
+O processamento local mantém a aquisição mesmo quando Wi-Fi ou MQTT estão indisponíveis. A fila tem 720 posições. A escolha corresponde a uma hora de telemetria com intervalo de cinco segundos e mantém o uso de memória previsível.
+
+### Comunicação MQTT
+
+O dispositivo usa o broker público `broker.hivemq.com` na porta 1883, exclusivamente com dados sintéticos. Telemetria, alertas e estado são publicados em tópicos separados. O prefixo `rm566777` e o identificador do dispositivo integram o caminho dos tópicos para reduzir colisões com outros experimentos acadêmicos.
+
+Uma publicação é considerada entregue apenas quando a biblioteca cliente aceita o payload para transmissão. Essa confirmação local não equivale a garantia de persistência no broker, pois o exemplo utiliza QoS 0. Essa limitação será declarada no relatório e na demonstração.
+
+### Fog e visualização
+
+O Node-RED atua como camada de integração e apresentação. O flow converte JSON, valida os campos obrigatórios e distribui os valores para:
+
+- gráfico temporal de BPM;
+- gauge de temperatura;
+- indicador visual de alerta;
+- textos de origem, fila e amostras descartadas.
+
+### Nuvem
+
+O broker MQTT representa a camada de nuvem. Não há banco de dados persistente nesta versão obrigatória. O histórico exibido pelo dashboard é temporário e limitado à execução do Node-RED.
+
+## Contrato de dados
+
+| Campo | Tipo | Unidade | Descrição |
+|---|---|---|---|
+| `device_id` | string | — | Identificador do ESP32 simulado |
+| `sequence` | inteiro | — | Sequência crescente da amostra |
+| `uptime_ms` | inteiro | ms | Instante da coleta desde a inicialização |
+| `temperature_c` | número | °C | Temperatura do DHT22 |
+| `humidity_pct` | número | % | Umidade do DHT22 |
+| `bpm` | inteiro | bpm | Frequência simulada pelo potenciômetro |
+| `alert_code` | inteiro | máscara | Combinação binária das regras de alerta |
+| `alert` | string | — | Rótulo legível do alerta prioritário |
+| `source` | string | — | `buffered` para amostras sincronizadas |
+| `buffer_pending` | inteiro | amostras | Tamanho da fila no momento da publicação |
+| `dropped_samples` | inteiro | amostras | Total substituído por estouro da fila |
+
+## Decisões e limitações
+
+- O SPIFFS não integra o caminho obrigatório porque o enunciado reconhece sua volatilidade no simulador.
+- O buffer em RAM é perdido quando a simulação é encerrada; a resiliência demonstrada é contra interrupção de conectividade durante a execução.
+- O broker público não oferece confidencialidade na porta 1883. Dados reais são proibidos.
+- `uptime_ms` não é horário civil. O Node-RED registra o momento de chegada para o gráfico.
+- Os alertas são regras didáticas configuráveis e não constituem diagnóstico.
+- O projeto não confirma entrega fim a fim ao broker e não implementa QoS 1 nesta versão.
+
