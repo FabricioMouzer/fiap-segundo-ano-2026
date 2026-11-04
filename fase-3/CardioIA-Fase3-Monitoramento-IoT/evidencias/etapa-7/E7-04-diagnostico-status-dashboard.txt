@@ -1,0 +1,67 @@
+CARDIOIA FASE 3 — ETAPA 7
+DIAGNÓSTICO E CORREÇÃO DO STATUS DO DASHBOARD
+Data: 25/10/2026
+
+Relato observado pelo grupo
+- O dashboard abriu normalmente, mas exibiu o dispositivo em vermelho como
+  "offline_unexpected | fila: 1 | descartes: 0".
+- Ao mesmo tempo, a condição clínica permanecia NORMAL e os gauges mostravam
+  os últimos valores conhecidos.
+
+Diagnóstico reproduzido
+- Endpoint público: HTTP 200; o site não estava indisponível.
+- O Wokwi havia encerrado uma sessão MQTT, acionando o Last Will retido
+  "offline_unexpected".
+- Nova execução do Wokwi coletou a primeira amostra antes da conexão MQTT e a
+  guardou no FIFO: BUFFER_STORE seq=1 ... pending=1.
+- Após a conexão, a amostra foi sincronizada: SYNC_DONE sent=1 pending=0.
+- A amostra seguinte foi publicada ao vivo: MQTT_PUBLISH seq=2 source=live ...
+  pending_after=0.
+- O dashboard recebeu a telemetria e atualizou sequência, gráfico e gauges,
+  mas o cartão "Dispositivo" ainda mostrava o status retido antigo.
+
+Causa
+- O status MQTT e a telemetria chegam por tópicos independentes.
+- Uma mensagem Last Will de sessão anterior pode permanecer visível mesmo
+  quando uma nova sessão já publica telemetria válida.
+
+Correção aplicada
+- O processador de telemetria passou a produzir oito saídas.
+- Toda telemetria válida reafirma no cartão "Dispositivo":
+  "online (telemetria ativa) | fila: N | descartes: N".
+- O valor técnico "offline_unexpected" passou a ser apresentado no painel como
+  "offline — inicie o Wokwi", evitando que o usuário confunda o Last Will com
+  uma falha do site.
+- O tópico de status e o Last Will foram preservados. Quando não houver mais
+  telemetria, o Last Will continua capaz de sinalizar a desconexão.
+- Contratos inválidos permanecem isolados na saída de rejeições.
+
+Validação local
+- tests/validate_stage5_flow.js: 35 verificações aprovadas após a auditoria.
+- tests/validate_stage6_evidence.py: 38 verificações aprovadas.
+- tests/validate_stage7_artifacts.py: 21 verificações aprovadas após a auditoria.
+- git diff --check: aprovado.
+
+Estado
+- Commit publicado: d3091099b9130d35922d0cc1ac1c90f53dbbee00.
+- Deploy Render: dep-dbf2see7bikc73c02h8g, estado live.
+- Revalidação pública com Wokwi ativo:
+  - condição: NORMAL;
+  - sequência: #3;
+  - origem: live;
+  - fila: 0;
+  - descartes: 0;
+  - dispositivo: online (telemetria ativa);
+  - temperatura: 36,5 °C;
+  - umidade: 55%;
+  - BPM: 110, visível no gráfico.
+- Resultado: correção aprovada localmente e no ambiente público.
+
+Validação da mensagem offline
+- Commit de clareza: 83090f3df7548bcdfef7a8d98e9304860e768c4c.
+- Deploy Render: dep-dbf30qm7bikc73c0g9qg, estado live.
+- O Wokwi foi parado deliberadamente após a validação online.
+- O dashboard público exibiu:
+  "offline — inicie o Wokwi | fila: 0 | descartes: 0".
+- Resultado: o estado offline permanece tecnicamente correto e agora orienta
+  explicitamente o usuário sobre como iniciar o fluxo em tempo real.

@@ -1,0 +1,26 @@
+# Credenciais e configurações locais
+.env
+.env.*
+secrets.h
+credentials.h
+
+# Ambientes e dependências
+.venv/
+venv/
+node_modules/
+.pio/
+node-red/.config.runtime.json
+node-red/.config.nodes.json
+node-red/.config.*.backup
+node-red/.sessions.json
+node-red/.flows.json.backup
+node-red/flows_cred.json
+node-red/lib/
+
+# Arquivos temporários
+tmp/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db

@@ -4,9 +4,9 @@ Protótipo acadêmico que extrai sintomas por mapa de conhecimento e classifica 
 
 > Uso exclusivamente educacional. Não realiza diagnóstico médico nem deve orientar atendimento real.
 
-## Estado revisado em 05/09/2026
+## Estado revisado em 07/10/2026
 
-**Núcleo técnico concluído e reproduzido: 19 testes aprovados.** O notebook está executado, com tabelas e gráficos salvos. A entrega ainda depende da publicação do vídeo como não listado, revisão do grupo e envio à FIAP.
+**Núcleo técnico concluído e reproduzido: 19 testes aprovados.** O notebook está executado, com tabelas e gráficos salvos, e o vídeo técnico de demonstração (3min40, 1080p) está publicado no YouTube.
 
 **Prazo:** 07/10/2026. O enunciado recuperado não informa o horário final.
 
@@ -17,7 +17,7 @@ Protótipo acadêmico que extrai sintomas por mapa de conhecimento e classifica 
 | Dataset rotulado | 1 | [80 frases em 40 grupos](data/raw/dataset_risco.csv) |
 | Classificador treinado e testado | 2 | [notebook executado](notebooks/classificador_risco_tfidf.ipynb), [métricas](data/processed/metricas_modelos.json) |
 | Documentação e GitHub público | 1 | README, [revisão final](docs/REVISAO_FINAL_2026-09-05.md) e documentação |
-| Vídeo ≤4 minutos, YouTube não listado e link | 2 | **publicação pendente** |
+| Vídeo ≤4 minutos, YouTube não listado e link | 2 | [YouTube (3min40, 1080p)](https://www.youtube.com/watch?v=lRi9IlAqs2A) e [identificação/legendas](docs/video/README.md) |
 
 Os pesos identificam critérios com evidências, não pontuação atribuída pelo professor nem percentual de trabalho enviado.
 
